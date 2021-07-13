@@ -1,0 +1,533 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/%E9%98%BF%E7%8B%B8QQ.jpg">
+  <link rel="icon" href="/images/%E9%98%BF%E7%8B%B8QQ.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="TCJ,">
+  <meta name="author" content="TCJ">
+  <meta name="keywords" content="">
+  
+  <title>搞机两周年 | TCJ&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>TCJ,</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/blue.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="搞机两周年">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      TCJ
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-17 14:30" pubdate>
+        2021年4月17日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">搞机两周年</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：3 小时前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="搞机两周年"><a href="#搞机两周年" class="headerlink" title="搞机两周年"></a>搞机两周年</h1><p>—GTA5！GTA5！！GTA5！！！我一定要玩到！</p>
+<p>2年前的一天晚上，具体来说是2月15日晚，博主刚从家人那里拿到了新年的压岁钱，在此之前，博主对一款游戏产生了强烈的兴趣，但家里8年前的电脑正处于宕机状态。于是，趁这个其乐融融的日子里我提出了买新电脑的要求，结果是被当场驳回。但是博主面对梦想中的游戏怎么会就此罢休呢，恰巧博主在进行这方面的努力后了解到了组装电脑。</p>
+<p>事情是这样的，我在淘宝上欣喜地挑电脑时，看上了一款组装电脑，但是支付宝对未成年人有单次支付上限（1000元），再加上家里人的拒绝，博主就想从网上买小零件后再组装起来，这样不就行了？（之后的事实证明这的确可行）。</p>
+<p>此时的博主仿佛又看到了希望，便立马在淘宝上下了一个电脑咨询的单，经过一翻激情讨论后，博主随即就挑好了各零件，现在万事具备，就等快递到了。</p>
+<p>（实际上博主先是买了一些廉价的电脑零件组了一台廉价的电脑来确保博主确实有能力完成这件事）</p>
+<p>最后，博主如愿以偿地获得了人生当中第一台组装电脑（实际上是组的第二台，但这台才有实际意义），装好系统下好游戏后，这个梦想也就实现了。GTA5启动！</p>
+<p>博主的搞机之路没有因此而停止，反而发展成了对用电子垃圾拼装出高性价比组装机的兴趣，至此之后，我纵横图吧、闲鱼等各种硬件交流区。</p>
+<p><u>图吧</u>百科介绍：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9B%BE%E6%8B%89%E4%B8%81%E5%90%A7/2345154?fr=aladdin">https://baike.baidu.com/item/%E5%9B%BE%E6%8B%89%E4%B8%81%E5%90%A7/2345154?fr=aladdin</a>  正如百科所说，图吧是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/DIY">DIY</a>爱好者聚集地，是乐意为计算机技术献出一份力量的图钉们温暖的港湾。</p>
+<p>无论是 X79 洋垃圾、771硬改775 还是 用鞋盒当机箱，都是垃圾佬们（图吧用户对自己的戏称）对计算机性价比的极致追求和热爱。</p>
+<p>博主也是一刷贴吧就是几个小时，根本停不下来，也捡过一些垃圾（稍后放图）</p>
+<p>无奈，博主之后遇到了学业和兴趣的两难选择，最终只能暂时搁置兴趣，并在一年前完成了最后一台电脑的组装。</p>
+<p>但就在新冠肺炎导致的超长寒假期间，我在沉迷GTA5时，思考到底怎么样才能开发出如此神作，由此，博主对编程的兴趣被激发了。我于是翻出了几个月前在网上买的一本编程书，找出了它的配套教学视频，开始自学起来。由于有计算机硬件的基础，博主在编程时也无需考虑计算机的硬件条件。半个月后，我开发了人生第一个控制台程序（没有自己的界面，只能依托在控制台上运行）。不久之后，学校开学了，面临即将到来的中考，我想用新学的编程技能开发一个学习软件（即E-test），但时间实在紧迫，直到中考结束，我还没开启这个项目。</p>
+<p>中考后的暑假，我完成了E-test项目，并着眼于博主未来的人生道路，AI对当时的我来说是一个奇妙的东西，我认为它在不久后会代替人类，那制造AI的人应该不容易被替代吧（对于这个问题，我在之前的博文已经讨论过了），再我又感觉它非常NB，于是就选择了学习AI。</p>
+<p>直到去年过年的时候，我才开始较高效率的对AI的学习，到此刻，我对AI的学习也才算刚入了门，揭示智能背后的原理是一个快乐的过程，而原理却是普通且平凡的。</p>
+<hr>
+<h1 id="祝TCJ搞机两周年快乐！"><a href="#祝TCJ搞机两周年快乐！" class="headerlink" title="祝TCJ搞机两周年快乐！"></a>祝TCJ搞机两周年快乐！<img src="/images/gj2/1.gif" srcset="/img/loading.gif" lazyload alt="1"></h1><h3 id="纪念"><a href="#纪念" class="headerlink" title="纪念"></a>纪念</h3><h6 id="第一次组装尝试："><a href="#第一次组装尝试：" class="headerlink" title="第一次组装尝试："></a>第一次组装尝试：</h6><p><img src="/images/gj2/2.png" srcset="/img/loading.gif" lazyload alt="2"></p>
+<p>联想G41主板+亮机U</p>
+<p><img src="/images/gj2/3.png" srcset="/img/loading.gif" lazyload alt="3"></p>
+<p>TT额定400w电源 + G41 + 亮机U + 希捷250g机械盘 + 2GB圣创雷克ddr3内存条 （WIN 7系统）成功！</p>
+<h6 id="第二次攒机："><a href="#第二次攒机：" class="headerlink" title="第二次攒机："></a>第二次攒机：</h6><p><img src="/images/gj2/4.png" srcset="/img/loading.gif" lazyload alt="4"></p>
+<p>超频三散热器</p>
+<p><img src="/images/gj2/5.png" srcset="/img/loading.gif" lazyload alt="5"></p>
+<p>i5–3570 一代神U + 身后的技嘉b75m小板</p>
+<p><img src="/images/gj2/6.png" srcset="/img/loading.gif" lazyload alt="6"></p>
+<p>七彩虹 gtx 760 2G显卡</p>
+<p><img src="/images/gj2/7.png" srcset="/img/loading.gif" lazyload alt="7"><img src="/images/gj2/8.png" srcset="/img/loading.gif" lazyload alt="8"></p>
+<p>技嘉 b75m + i5–3570 + 七彩虹 gtx 760 2G + 10GB运存（8G威刚 + 2G圣创雷克）+ 500G希捷机械盘（WIN 10 系统）</p>
+<p><img src="/images/gj2/9.png" srcset="/img/loading.gif" lazyload alt="9"></p>
+<p><img src="/images/gj2/10.png" srcset="/img/loading.gif" lazyload alt="10"></p>
+<h6 id="捡垃圾："><a href="#捡垃圾：" class="headerlink" title="捡垃圾："></a>捡垃圾：</h6><h6 id=""><a href="#" class="headerlink" title=""></a><img src="/images/gj2/11.png" srcset="/img/loading.gif" lazyload alt="11"></h6><p><img src="/images/gj2/12.png" srcset="/img/loading.gif" lazyload alt="12"></p>
+<p>60元收来的迪兰恒进RX480 4G 战神满血版</p>
+<h6 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="/images/gj2/13.png" srcset="/img/loading.gif" lazyload alt="13"></h6><p>“妖”板！</p>
+<p><img src="/images/gj2/14.png" srcset="/img/loading.gif" lazyload alt="14"></p>
+<p>一些用来测试硬件的软件</p>
+<p><img src="/images/gj2/15.png" srcset="/img/loading.gif" lazyload alt="15"></p>
+<p>怎么能少了这个？<img src="/images/gj2/16.png" srcset="/img/loading.gif" lazyload alt="16"></p>
+<p>用“垃圾”拼的机子</p>
+<p><img src="/images/gj2/17.png" srcset="/img/loading.gif" lazyload alt="17"></p>
+<p>用来挂游戏。</p>
+<h6 id="硬件工作台："><a href="#硬件工作台：" class="headerlink" title="硬件工作台："></a>硬件工作台：</h6><p><img src="/images/gj2/18.png" srcset="/img/loading.gif" lazyload alt="18"></p>
+<p>有点乱，去年寒假搭起来的。主要有热风枪、预热台（还有上面的芯片）等。</p>
+<p><img src="/images/gj2/19.png" srcset="/img/loading.gif" lazyload alt="19"></p>
+<p>燃烧的芯片！</p>
+<h6 id="软件工作台："><a href="#软件工作台：" class="headerlink" title="软件工作台："></a>软件工作台：</h6><p><img src="/images/gj2/20.png" srcset="/img/loading.gif" lazyload alt="20"></p>
+<p>平时写博客、娱乐、敲代码等都是在这进行的。<img src="/images/gj2/21.png" srcset="/img/loading.gif" lazyload alt="21"></p>
+<p>方便的数码收纳袋，装一些系统安装U盘等</p>
+<h6 id="博主的床头文学：（当时为了提升计算机技术和揭示计算机原理买的）"><a href="#博主的床头文学：（当时为了提升计算机技术和揭示计算机原理买的）" class="headerlink" title="博主的床头文学：（当时为了提升计算机技术和揭示计算机原理买的）"></a>博主的床头文学：（当时为了提升计算机技术和揭示计算机原理买的）</h6><p><img src="/images/gj2/22.png" srcset="/img/loading.gif" lazyload alt="22"><img src="/images/gj2/23.png" srcset="/img/loading.gif" lazyload alt="23"><img src="/images/gj2/24.png" srcset="/img/loading.gif" lazyload alt="24"><img src="/images/gj2/25.png" srcset="/img/loading.gif" lazyload alt="25"></p>
+<p>当时买的时候都是激情满满，现在却很少再有时间翻开来看了。</p>
+<p><img src="/images/gj2/26.png" srcset="/img/loading.gif" lazyload alt="26"></p>
+<p>希望在新的一年能看完这本书和完成有趣的项目。</p>
+<p>把往事整理成博文，和你分享其中的快乐。</p>
+<hr>
+<h2 id="规定：2月15日为TCJ的搞机节！"><a href="#规定：2月15日为TCJ的搞机节！" class="headerlink" title="规定：2月15日为TCJ的搞机节！"></a>规定：2月15日为TCJ的搞机节！</h2>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%AF%BC%E6%95%B0%E5%92%8C%E6%A2%AF%E5%BA%A6%EF%BC%88%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%89/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">机器学习中的导数和梯度（学习笔记）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/03/2021-04-03-%E5%BC%80%E6%BA%90E-test%E9%A1%B9%E7%9B%AE/">
+                        <span class="hidden-mobile">开源E-test项目(学习软件)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2021/04/17/2021-04-3-%E6%90%9E%E6%9C%BA%E4%B8%A4%E5%91%A8%E5%B9%B4/';
+          this.page.identifier = '/2021/04/17/2021-04-3-%E6%90%9E%E6%9C%BA%E4%B8%A4%E5%91%A8%E5%B9%B4/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

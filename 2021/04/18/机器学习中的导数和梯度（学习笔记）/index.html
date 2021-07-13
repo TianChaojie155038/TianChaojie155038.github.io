@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/%E9%98%BF%E7%8B%B8QQ.jpg">
+  <link rel="icon" href="/images/%E9%98%BF%E7%8B%B8QQ.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="TCJ,">
+  <meta name="author" content="TCJ">
+  <meta name="keywords" content="">
+  
+  <title>机器学习中的导数和梯度（学习笔记） | TCJ&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>TCJ,</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/images/blue.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="机器学习中的导数和梯度（学习笔记）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      TCJ
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-18 10:25" pubdate>
+        2021年4月18日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      49
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">机器学习中的导数和梯度（学习笔记）</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：3 小时前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h2 id="机器学习中的导数和梯度（学习笔记）"><a href="#机器学习中的导数和梯度（学习笔记）" class="headerlink" title="机器学习中的导数和梯度（学习笔记）"></a>机器学习中的导数和梯度（学习笔记）</h2><p>本文将会把博主对于导数和梯度在机器学习中的意义和应用的理解做一个整理并供大家参考，欢迎批评指正！文章总体结构：<img src="/images/machine_learning_daoti/1.png" srcset="/img/loading.gif" lazyload alt="1"></p>
+<p>传播搞机的快乐，分享计算机知识！—TCJ</p>
+<hr>
+<h4 id="1-导数和梯度的意义"><a href="#1-导数和梯度的意义" class="headerlink" title="1.导数和梯度的意义"></a>1.导数和梯度的意义</h4><h5 id="1-1导数："><a href="#1-1导数：" class="headerlink" title="1.1导数："></a>1.1导数：</h5><p>导数（derivative）是微积分的重要概念，设函数 y = f(x) 在点 x0 的某个领域内有定义，当自变量 x 在 x0 的某个邻域内有定义 ，当自变量 x 在 x0 的处取得增量 △x 时，相应的函数 y 将取得增量 △y ；如果 △y 与 △x 之比在 △x → 0 时存在极限，则称函数 y = f(x) 在点 x0 处可导，并称这个极限为函数 y = f(x) 在点 x0 的导数。</p>
+<p>这个定义是不是有点像在物理上求瞬时速度？</p>
+<p>v = s / t ；当 t → 0 时， v 可看作在某一时刻的瞬时速度。</p>
+<p>在几何上，导数可看作是函数在某一点的切线的斜率。<img src="/images/machine_learning_daoti/2.gif" srcset="/img/loading.gif" lazyload alt="2"></p>
+<p>如图所示，当 △t 趋近于 0 时，导数就是函数 f(x) 在 t0 点的切线。此时可求得在时刻 t0 时的瞬时速度。</p>
+<h5 id="1-2梯度："><a href="#1-2梯度：" class="headerlink" title="1.2梯度："></a>1.2梯度：</h5><p>梯度（gradient）是一个向量，它既有方向又有大小，它的方向是某一函数在某点处变化率最大的方向，此时它的大小就是变化率。</p>
+<p>我们假设一个场景：现在有一个宝箱，放在山顶最高处，山下有三队人马同时开始上山，向宝箱进发</p>
+<p><u>注明：</u>我们假设此处最快到达最高处的队伍获胜，而不去考虑实际的路程等。也就是和宝箱处于同一高度即可，不去管他们之间的水平距离。</p>
+<p>显然，他们需要对当前所处位置做一个判断，找出走最少的路上升最大的高度的方向。然后沿着这个方向走几步，再判断方向，再走几步，以此类推，直到走到最高处。</p>
+<p>类似的，梯度就是这个方向，山就是某个函数，宝箱所处位置就是函数的最高点，三队人马是除最高点外的其它任意三个函数上的点。可以看出，梯度的方向就是函数在某点变化率最大的方向，有了它的帮助，可找到函数的最高点或最低点。</p>
+<h5 id="1-3小结："><a href="#1-3小结：" class="headerlink" title="1.3小结："></a>1.3小结：</h5><p>导数在几何上可看作某一函数上在某一点的切线的斜率，</p>
+<p>对于单个自变量的函数，</p>
+<p>导数就是该点的梯度。</p>
+<p>对于多个自变量的函数，</p>
+<p>我们对每个自变量都进行求导，</p>
+<p>梯度就是每个导数所组成的向量。</p>
+<p>梯度方向是某一函数在某一点上的变化率最大的方向，由此进行迭代计算可找到函数的最值。</p>
+<h4 id="2-导数和梯度的数学计算"><a href="#2-导数和梯度的数学计算" class="headerlink" title="2.导数和梯度的数学计算"></a>2.导数和梯度的数学计算</h4><p>了解了导数的基本概念后，我们需要对它进行计算才能运用到实际。</p>
+<p>从它的定义可知，</p>
+<p>若我们已知某一物体的行进路程和时间可由图中的函数描述（此处近似看作函数 y = x*x , 方便讨论），</p>
+<p>显然，t &gt;= 0 ；且当 t = 0 时；函数值为 0 ，是该函数的最低点。</p>
+<p>现在我们任取一时间点 t0 = 100，</p>
+<p>用梯度下降的方法找到 路程的最小值 和 此时的时间 t1 ，</p>
+<p>对于任一 t ( t&gt;=0 )，求导得到：f ’(t) = 2t；过程如下</p>
+<p><img src="/images/machine_learning_daoti/3.png" srcset="/img/loading.gif" lazyload alt="3"></p>
+<p>此处 μ 为每次更新的步长，取值 0.1，前面添加“ — ”号表示沿着负梯度方向（μ 若过大，可能会错过最低点；若过小，可能会迟迟找不到最低点）</p>
+<p>我们让计算机来帮忙算一下</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">sec</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">double</span> rate = <span class="hljs-number">0.1</span>;<br>        <span class="hljs-keyword">double</span> t0 = <span class="hljs-number">100</span>;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>)&#123;<br>            i++;<span class="hljs-comment">//记录迭代次数</span><br>            <span class="hljs-keyword">double</span> s = t0*t0;<br>            t0 = t0 -<span class="hljs-number">2</span>*rate*t0;<br>            System.out.println(<span class="hljs-string">&quot;第&quot;</span>+i+<span class="hljs-string">&quot;次迭代&quot;</span>);<br>            System.out.println(<span class="hljs-string">&quot;时间 : &quot;</span>+t0);<br>            System.out.println(<span class="hljs-string">&quot;路程 : &quot;</span>+s);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><img src="/images/machine_learning_daoti/4.png" srcset="/img/loading.gif" lazyload alt="4"></p>
+<p>计算机瞬间就找到了最小路程为 0 ，时间为 1.0E-323（这里不是 0 是因为计算精度造成的，但可近似看作是 0）</p>
+<p>当然，用梯度下降来求解此函数的最小值是没有现实意义的，更一般的，机器学习任务中的特征空间大多是多维的（即拥有多个自变量），下面让我们来讨论一下它在机器学习中的具体应用。</p>
+<h5 id="2-1知识点小结："><a href="#2-1知识点小结：" class="headerlink" title="2.1知识点小结："></a>2.1知识点小结：</h5><p>求导公式：<img src="/images/machine_learning_daoti/5.png" srcset="/img/loading.gif" lazyload alt="5"></p>
+<h4 id="3-导数和梯度的应用"><a href="#3-导数和梯度的应用" class="headerlink" title="3.导数和梯度的应用"></a>3.导数和梯度的应用</h4><p>在机器学习任务中，我们一般会选择一个代价函数来描述学得的模型的输出与真实值之间的差距（即误差），并通过不断减小代价函数的值来优化模型。</p>
+<p>例如：</p>
+<p>常用的线性回归模型，</p>
+<p>y = <strong>w</strong> * <strong>x</strong> + b，</p>
+<p>用合适的代价函数描述误差，</p>
+<p>E = (1/2)*Σ（f(x) – y）^2，（1/2 是为了抵销平方后的 2，对结果无影响）</p>
+<p>试着减小它的误差，</p>
+<p>对此进行求导，</p>
+<p><img src="/images/machine_learning_daoti/6.png" srcset="/img/loading.gif" lazyload alt="6"></p>
+<p>链式法则可有效降低求导复杂度</p>
+<p><img src="/images/machine_learning_daoti/7.png" srcset="/img/loading.gif" lazyload alt="7"></p>
+<p><img src="/images/machine_learning_daoti/8.png" srcset="/img/loading.gif" lazyload alt="8"></p>
+<p>往梯度的反方向上适当前进，</p>
+<p>△wi = – μ * xi * ( Y – y )  ，（Y 是模型的输出，y 是真实值，x 是输入的特征，μ是学习率）</p>
+<p>同理可得，</p>
+<p>△b = – μ * ( Yi – yi )</p>
+<h5 id="3-1小结："><a href="#3-1小结：" class="headerlink" title="3.1小结："></a>3.1小结：</h5><p>导数和梯度在机器学习中有重要的应用，可以说是智能原理的核心。</p>
+<p>常见的神经网络模型就是基于此的。</p>
+<h4 id="4-用对率回归函数实践"><a href="#4-用对率回归函数实践" class="headerlink" title="4.用对率回归函数实践"></a>4.用对率回归函数实践</h4><p>有了第三节的讨论，</p>
+<p>我们可类似的对对率回归函数进行学习规则的推导，</p>
+<p>y = 1/(1+e^-z )，</p>
+<p>省略过程，</p>
+<p>对 f(x) 求导得到，</p>
+<p>f’(x) = f(x)*(1–f(x))，</p>
+<p>仍用均方误差描述，</p>
+<p>最终对于 z = <strong>w</strong> * <strong>x</strong> + b 中的 <strong>w</strong> 和 b，</p>
+<p>其更新式为，</p>
+<p>△wi = –μ * xi * Y * (1–Y) * (Y–y)</p>
+<p>△b = –μ * Y * (1–Y) * (Y–y)</p>
+<p> 要进行机器学习，首先得要有数据，这里使用一个西瓜数据集（来源《机器学习》侵权即删），我们构造一个能分类西瓜好坏的学习模型。</p>
+<p>并用留出法对原始数据进行处理，分为训练集和测试集</p>
+<p>最后用错误率来评估模型性能</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">sigmoid</span> </span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 训练集:</span><br><span class="hljs-comment">     * (正例，都是好瓜①密度 0.697 含糖率 0.460  ②密度 0.774 含糖率0.376  ③密度 0.634 含糖率 0.264</span><br><span class="hljs-comment">     * ④密度 0.608 含糖率 0.318 ⑤密度 0.556 含糖率 0.215)</span><br><span class="hljs-comment">     * (反例①密度 0.666 含糖率 0.091 ②密度 0.243 含糖率 0.267 ③密度 0.245 含糖率 0.057</span><br><span class="hljs-comment">     * ④密度 0.343 含糖率 0.099 ⑤密度 0.639 含糖率 0.161 ⑥密度 0.657 含糖率 0.198</span><br><span class="hljs-comment">     * )</span><br><span class="hljs-comment">     * 测试集:</span><br><span class="hljs-comment">     * (正例①密度 0.481 含糖率 0.149 ②密度 0.437 含糖率 0.211 ③密度 0.403 含糖率 0.237)</span><br><span class="hljs-comment">     * (反例①密度 0.593 含糖率 0.042 ②密度 0.719 含糖率 0.103 ④密度 0.360 含糖率 0.370)</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> InterruptedException </span>&#123;<br>        List traindatas = <span class="hljs-keyword">new</span> ArrayList();<br>        List traindatass = <span class="hljs-keyword">new</span> ArrayList();<br>        List zresult = <span class="hljs-keyword">new</span> ArrayList();<br>        traindatas.add(<span class="hljs-number">0.697</span>);<br>        traindatass.add(<span class="hljs-number">0.460</span>);<br>        traindatas.add(<span class="hljs-number">0.774</span>);<br>        traindatass.add(<span class="hljs-number">0.376</span>);<br>        traindatas.add(<span class="hljs-number">0.634</span>);<br>        traindatass.add(<span class="hljs-number">0.264</span>);<br>        traindatas.add(<span class="hljs-number">0.608</span>);<br>        traindatass.add(<span class="hljs-number">0.318</span>);<br>        traindatas.add(<span class="hljs-number">0.556</span>);<br>        traindatass.add(<span class="hljs-number">0.215</span>);<br>        <span class="hljs-comment">//正例↑</span><br>        traindatas.add(<span class="hljs-number">0.666</span>);<br>        traindatass.add(<span class="hljs-number">0.091</span>);<br>        traindatas.add(<span class="hljs-number">0.243</span>);<br>        traindatass.add(<span class="hljs-number">0.267</span>);<br>        traindatas.add(<span class="hljs-number">0.245</span>);<br>        traindatass.add(<span class="hljs-number">0.057</span>);<br>        traindatas.add(<span class="hljs-number">0.343</span>);<br>        traindatass.add(<span class="hljs-number">0.099</span>);<br>        traindatas.add(<span class="hljs-number">0.639</span>);<br>        traindatass.add(<span class="hljs-number">0.161</span>);<br>        traindatas.add(<span class="hljs-number">0.657</span>);<br>        traindatass.add(<span class="hljs-number">0.198</span>);<br>        zresult.add(<span class="hljs-number">1</span>);<br>        zresult.add(<span class="hljs-number">1</span>);<br>        zresult.add(<span class="hljs-number">1</span>);<br>        zresult.add(<span class="hljs-number">1</span>);<br>        zresult.add(<span class="hljs-number">1</span>);<br>        zresult.add(<span class="hljs-number">0</span>);<br>        zresult.add(<span class="hljs-number">0</span>);<br>        zresult.add(<span class="hljs-number">0</span>);<br>        zresult.add(<span class="hljs-number">0</span>);<br>        zresult.add(<span class="hljs-number">0</span>);<br>        zresult.add(<span class="hljs-number">0</span>);<br>        List ftraindatas = <span class="hljs-keyword">new</span> ArrayList();<br>        List ftraindatass = <span class="hljs-keyword">new</span> ArrayList();<br>        List fzresult = <span class="hljs-keyword">new</span> ArrayList();<br>        ftraindatas.add(<span class="hljs-number">0.481</span>);<br>        ftraindatass.add(<span class="hljs-number">0.149</span>);<br>        ftraindatas.add(<span class="hljs-number">0.437</span>);<br>        ftraindatass.add(<span class="hljs-number">0.211</span>);<br>        ftraindatas.add(<span class="hljs-number">0.593</span>);<br>        ftraindatass.add(<span class="hljs-number">0.042</span>);<br>        ftraindatas.add(<span class="hljs-number">0.719</span>);<br>        ftraindatass.add(<span class="hljs-number">0.103</span>);<br>        ftraindatas.add(<span class="hljs-number">0.403</span>);<br>        ftraindatass.add(<span class="hljs-number">0.237</span>);<br>        ftraindatas.add(<span class="hljs-number">0.360</span>);<br>        ftraindatass.add(<span class="hljs-number">0.370</span>);<br>        fzresult.add(<span class="hljs-number">1</span>);<br>        fzresult.add(<span class="hljs-number">1</span>);<br>        fzresult.add(<span class="hljs-number">1</span>);<br>        fzresult.add(<span class="hljs-number">0</span>);<br>        fzresult.add(<span class="hljs-number">0</span>);<br>        fzresult.add(<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">float</span> f = (<span class="hljs-keyword">float</span>) ftraindatas.size() / (traindatas.size() + ftraindatas.size());<br>        System.out.println(<span class="hljs-string">&quot;训练集数据比例:&quot;</span> + (<span class="hljs-number">1</span> - f));<span class="hljs-comment">//此处为0.64</span><br>        List ws = <span class="hljs-keyword">new</span> ArrayList();<br>        ws.add(<span class="hljs-number">0.8</span>);<span class="hljs-comment">//初始化权重</span><br>        ws.add(<span class="hljs-number">0.1</span>);<br>        <span class="hljs-keyword">double</span> b = <span class="hljs-number">1</span>;<span class="hljs-comment">//初始化偏置项</span><br>        <span class="hljs-keyword">double</span> rate = <span class="hljs-number">0.1</span>;<span class="hljs-comment">//学习率</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) &#123;<span class="hljs-comment">//进行500轮学习</span><br>            <span class="hljs-keyword">int</span> ii = i + <span class="hljs-number">1</span>;<br>            System.out.println(<span class="hljs-string">&quot;第&quot;</span> + ii + <span class="hljs-string">&quot;轮学习&quot;</span>);<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">11</span>; j++) &#123;<br>                <span class="hljs-keyword">double</span> x1 = Double.valueOf(traindatas.get(j).toString());<br>                <span class="hljs-keyword">double</span> x2 = Double.valueOf(traindatass.get(j).toString());<br>                <span class="hljs-keyword">double</span> y = Double.valueOf(zresult.get(j).toString());<br>                <span class="hljs-keyword">double</span> Y = <span class="hljs-number">1</span> / (<span class="hljs-number">1</span> + Math.pow(Math.E, -(Double.valueOf(ws.get(<span class="hljs-number">0</span>).toString()) * x1 + Double.valueOf(ws.get(<span class="hljs-number">1</span>).toString()) * x2 + b)));<br>                ws.set(<span class="hljs-number">0</span>, Double.valueOf(ws.get(<span class="hljs-number">0</span>).toString()) - rate * x1 * Y * (<span class="hljs-number">1</span> - Y) * (Y - y));<br>                ws.set(<span class="hljs-number">1</span>, Double.valueOf(ws.get(<span class="hljs-number">1</span>).toString()) - rate * x2 * Y * (<span class="hljs-number">1</span> - Y) * (Y - y));<br>                b = b - rate * Y * (<span class="hljs-number">1</span> - Y) * (Y - y);<br>                System.out.println(<span class="hljs-string">&quot;w1:&quot;</span> + ws.get(<span class="hljs-number">0</span>));<br>            &#125;<br>            <span class="hljs-keyword">int</span> c = <span class="hljs-number">0</span>;<span class="hljs-comment">//记录错误个数</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">6</span>; k++) &#123;<span class="hljs-comment">//测试</span><br>                <span class="hljs-keyword">double</span> x1 = Double.valueOf(ftraindatas.get(k).toString());<br>                <span class="hljs-keyword">double</span> x2 = Double.valueOf(ftraindatass.get(k).toString());<br>                <span class="hljs-keyword">double</span> y = Double.valueOf(fzresult.get(k).toString());<br>                <span class="hljs-keyword">double</span> Y = <span class="hljs-number">1</span> / (<span class="hljs-number">1</span> + Math.pow(Math.E, Double.valueOf(ws.get(<span class="hljs-number">0</span>).toString()) * x1 + Double.valueOf(ws.get(<span class="hljs-number">1</span>).toString()) * x2 + b));<br><br>                <span class="hljs-keyword">if</span> (Y &gt; <span class="hljs-number">0.5</span> &amp; y == <span class="hljs-number">1.0</span>) &#123;<br><br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Y &lt; <span class="hljs-number">0.5</span> &amp; y == <span class="hljs-number">0.0</span>) &#123;<br><br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    c++;<br>                    System.out.println(<span class="hljs-string">&quot;第&quot;</span> + k + <span class="hljs-string">&quot;个示例分类错误&quot;</span>);<br>                &#125;<br><br>            &#125;<br>            System.out.println(<span class="hljs-string">&quot;错误率&quot;</span> + c / <span class="hljs-number">6.0</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p><img src="/images/machine_learning_daoti/9.png" srcset="/img/loading.gif" lazyload alt="9"></p>
+<p>在进行了917次学习后，模型错误率从 0.5 降到了 0.33 ，有趣的是在第26轮学习后，错误率从0.5上升到了0.83，实际上，生活中的机器学习任务要比这复杂得多，往往还要考虑 过拟合、最优解 等。这也就是为什么此处错误率会上升的原因<img src="/images/machine_learning_daoti/10.png" srcset="/img/loading.gif" lazyload alt="10"></p>
+<p>拿 w1 举例，w1 每次更新的值很小，只有多次训练才能找到一个局部最优解。</p>
+<p>这里只是简单构建了一个分类模型，为了说明导数和梯度在机器学习中确实具有重要意义。</p>
+<h5 id="4-1小结："><a href="#4-1小结：" class="headerlink" title="4.1小结："></a>4.1小结：</h5><p>对于一个学习模型，我们可用代价函数描述它的误差，通过求导找到此函数变化率最大的方向，让自变量（即要学习的参数）往此方向的反方向适当改变值即可优化模型的性能。这就是基于梯度下降法的学习。</p>
+<h4 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h4><p>导数在几何上可看作函数在某一点的切线斜率（也是梯度），</p>
+<p>该方向是变化率最大的方向，</p>
+<p>导数计算公式为<img src="/images/machine_learning_daoti/5.png" srcset="/img/loading.gif" lazyload alt="5">，</p>
+<p>基于此进行学习可得到最优参数，</p>
+<p>这就是梯度下降法。</p>
+<hr>
+<p>最后感谢CSDN上同学分享的知识，谢谢！</p>
+<p>笔记第二部分完成时间—2021/5/3 10:06 </p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/06/27/long_time_no_see/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">好久不见，想你~~</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/17/2021-04-3-%E6%90%9E%E6%9C%BA%E4%B8%A4%E5%91%A8%E5%B9%B4/">
+                        <span class="hidden-mobile">搞机两周年</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2021/04/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%AF%BC%E6%95%B0%E5%92%8C%E6%A2%AF%E5%BA%A6%EF%BC%88%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%89/';
+          this.page.identifier = '/2021/04/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%AF%BC%E6%95%B0%E5%92%8C%E6%A2%AF%E5%BA%A6%EF%BC%88%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%89/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://octodex.github.com/images/jetpacktocat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
