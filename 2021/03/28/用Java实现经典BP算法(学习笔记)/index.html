@@ -256,7 +256,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 小时前
+                  本文最后更新于：2 小时前
                 
               </p>
             
@@ -370,24 +370,22 @@
                   
                 
                 
-  <div class="disqus" style="width:100%">
-    <div id="disqus_thread"></div>
-    
-      <script type="text/javascript">
-        var disqus_config = function() {
-          this.page.url = 'http://example.com/2021/03/28/%E7%94%A8Java%E5%AE%9E%E7%8E%B0%E7%BB%8F%E5%85%B8BP%E7%AE%97%E6%B3%95(%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0)/';
-          this.page.identifier = '/2021/03/28/%E7%94%A8Java%E5%AE%9E%E7%8E%B0%E7%BB%8F%E5%85%B8BP%E7%AE%97%E6%B3%95(%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0)/';
-        };
-        Fluid.utils.loadComments('#disqus_thread', function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', new Date());
-          (d.head || d.body).appendChild(s);
-        });
-      </script>
-    
-    <noscript>Please enable JavaScript to view the comments</noscript>
-  </div>
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"pUsriROtT96qnazCUQkQIfup-gzGzoHsz","appKey":"WzGT9QkutgU2TLDKeM9rBSyn","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>
