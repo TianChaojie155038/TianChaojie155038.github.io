@@ -268,7 +268,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 天前
+                  本文最后更新于：3 小时前
                 
               </p>
             
@@ -282,18 +282,18 @@
 <p>对于一个学习算法 a 来说，若它在某些问题上比学习算法 b 好，则必然存在另一些问题，在那里 b 比 a 好 。有趣的是，这个结论对任何算法均成立 。也就是说，两个算法的总误差应该是相等的。</p>
 <p>让我们来证明一下：（前提：假设样本空间<em>X</em>和假设空间 <em>H</em>都是离散的 。令 P（h|<em>X</em>，a）代表算法 a 基于训练数据 <em>X</em>产生假设 h 的概率，再令 f 代表我们希望学习的真实目标函数 。Ⅱ(·)是指示函数，若 · 为真则为 1，否则取值 0 。）</p>
 <p>此处举一个二分类问题，真实目标函数可以是任何函数 <em>X</em>→{0，1}，函数空间为 {0,1}^|<em>X</em>|，对所有可能的 f 按均匀分布对误差求和，有：</p>
-<p><img src="/images/machine_learning_hobby/1.png" srcset="/img/loading.gif" lazyload alt="1"></p>
+<p><img src="/images/machine_learning_hobby/%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC1.png" srcset="/img/loading.gif" lazyload alt="公式推导1"></p>
 <p><strong>旁注：</strong>若 f 均匀分布，则有一半的 f 对 x 的预测与 h(x) 不一致</p>
 <p>上述式子最终等于下面这个式子</p>
-<p><img src="/images/machine_learning_hobby/2.png" srcset="/img/loading.gif" lazyload alt="2"></p>
+<p><img src="/images/machine_learning_hobby/%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC2.png" srcset="/img/loading.gif" lazyload alt="公式推导2"></p>
 <p>上式表示总误差与学习算法无关！也就是：</p>
-<p><img src="/images/machine_learning_hobby/3.png" srcset="/img/loading.gif" lazyload alt="3"></p>
+<p><img src="/images/machine_learning_hobby/%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC3.png" srcset="/img/loading.gif" lazyload alt="公式推导3"></p>
 <p>这就是著名的 “ 没有免费的午餐 ” 定理 。（此处证明已简化）</p>
 <p>那既然算法的期望性能都一样，那还学什么，直接猜算了</p>
 <p>注意，此定理的前提是所有问题都同等重要 。但是具体问题一般不是同等重要的，也就是要对症下药。此定理告诉我们：脱离具体问题而去谈论学习算法的性能是没有意义的。学习算法的偏好决定了它在某个问题上的性能 。</p>
 <p>有趣的是，此定理还可证明生活当中的一些问题：例如：有一个在厂房旁的房子，晚上会发出机器运转的声音，问这个房子好还是不好？</p>
 <p>答：显然，这可以从经济学的 “ 成本 ” 和  NFL 定理（没有免费午餐定理的简称）共同来说明这个道理，对一个在该厂房上班且不在乎噪音的人来说，他会认为这个房子好，他的成本几乎为零；对于一个喜欢宁静却不在乎上班路程的人，他会认为这个房子简直遭透了！他的成本是巨大的 ；而对于一个即不在乎噪音也不在乎距离的人来说，他无论选择什么，成本都是一样的 。</p>
-<p>参考资料——《机器学习》</p>
+<p>参考资料——《机器学习》如有侵权请联系作者删除。</p>
 
             </div>
             <hr>
