@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Spring项目结构分析</title>
+    <link href="/2021/07/18/2021-07-18-Spring%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/"/>
+    <url>/2021/07/18/2021-07-18-Spring%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/</url>
+    
+    <content type="html"><![CDATA[<img src="\images\spring\项目结构.png" alt="项目结构" style="zoom:67%;" /><p><span class="label label-success"><font size="3">DemospringApplication：</font></span>Spring Boot的程序入口。整个应用从这里开始。</p><p><span class="label label-success"><font size="3">static：</font></span>和templates是好搭档，用来存放静态资源，例如：图片、js、css。</p><p><span class="label label-success"><font size="3">templates：</font></span>非常重要的一个东西，用来存放渲染内容到浏览器的文件。</p><p><span class="label label-success"><font size="3">application.properties：</font></span>Spring Boot 的配置文件，可以配置访问的端口和数据库连接等。</p><p><span class="label label-success"><font size="3">DemospringApplicationTests：</font></span>一个测试类，通过测试可确保程序能正确运行。</p><p><span class="label label-success"><font size="3">pom.xml：</font></span>这是 maven 的配置文件，在该文件里面写着已经导入的依赖等。后续要导入其它依赖也可以在该文件配置。</p><p><span class="label label-success"><font size="3">External Libraries：</font></span>顾名思义，这是除本项目以外的用 Java 开发的其它程序，如果别人已经开发了解决一种问题的算法，那么我们可以直接调用，而不用重复造轮子。在这里 maven 根据我们选择的依赖已经为我们导入了相关的库了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Spring入门篇---学习笔记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>创建Spring项目</title>
     <link href="/2021/07/18/2021-07-18-%E5%88%9B%E5%BB%BASpring%E9%A1%B9%E7%9B%AE/"/>
     <url>/2021/07/18/2021-07-18-%E5%88%9B%E5%BB%BASpring%E9%A1%B9%E7%9B%AE/</url>
