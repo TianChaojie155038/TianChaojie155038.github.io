@@ -20,7 +20,7 @@
   <meta name="author" content="TCJ">
   <meta name="keywords" content="">
   
-  <title>机器学习偏好（学习笔记） | TCJ&#39;s Blog</title>
+  <title>Spring | TCJ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -184,12 +184,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/images/blue.jpg') no-repeat center center;
+         style="background: url('/images/spring/spring.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="机器学习偏好（学习笔记）">
+            <span class="h2" id="subtitle" title="Spring">
               
             </span>
 
@@ -204,8 +204,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-13 18:20" pubdate>
-        2021年3月13日 晚上
+      <time datetime="2021-07-17 14:29" pubdate>
+        2021年7月17日 下午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      34 字
     </span>
   
 
@@ -226,7 +226,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15
+      1
        分钟
     </span>
   
@@ -264,36 +264,22 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">机器学习偏好（学习笔记）</h1>
+            <h1 style="display: none">Spring</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 天前
+                  本文最后更新于：7 分钟前
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="机器学习偏好（学习笔记）"><a href="#机器学习偏好（学习笔记）" class="headerlink" title="机器学习偏好（学习笔记）"></a>机器学习偏好（学习笔记）</h2><p>通过学习得到的模型对应了假设空间中的一个假设。但如果有多个假设符合训练集，却必须要选择一个模型作为输出，那该怎么办？这时，学习算法本身的偏好就起到关键的作用。学习算法可能喜欢尽可能特殊的模型、也可能喜欢尽可能一般的模型。机器学习算法在学习过程中对某种类型假设的偏好，称为 “ 归纳偏好 ”（inductive bias），或简称为 “ 偏好 ” 。</p>
-<p><strong>旁注：</strong>尽可能特殊指 “ 适用情形尽可能少 ”；尽可能一般指 “ 适用情形尽可能多 ” 。</p>
-<p>任何一个有效的机器学习算法必有其归纳偏好，否则就跟胡猜差不多啦。</p>
-<p>归纳偏好可看作学习算法自身在一个可能很庞大的假设空间中对假设进行选择的启发式或 “ 价值观 ” 。“ 奥卡姆剃刀 ”（Occam’s razor）是一种常用的、自然科学研究中最基本的原则（它可以引导算法确立 “ 正确的 ” 偏好 ），即 “ 若有多个假设与观察一致，则选最简单的那个 ” 。</p>
-<p>然而，奥卡姆剃刀并非唯一可行的原则，需注意到，奥卡姆剃刀本身存在不同的诠释，使用奥卡姆剃刀并不平凡 。例如：对于两个假设来说，哪一个更简单这个问题并不简单，需借助其他机制才能解决。</p>
-<p>在具体的现实问题中，算法的归纳偏好是否与问题本身匹配，大多数时候直接决定了算法能否取得好 的性能 。</p>
-<p>对于一个学习算法 a 来说，若它在某些问题上比学习算法 b 好，则必然存在另一些问题，在那里 b 比 a 好 。有趣的是，这个结论对任何算法均成立 。也就是说，两个算法的总误差应该是相等的。</p>
-<p>让我们来证明一下：（前提：假设样本空间<em>X</em>和假设空间 <em>H</em>都是离散的 。令 P（h|<em>X</em>，a）代表算法 a 基于训练数据 <em>X</em>产生假设 h 的概率，再令 f 代表我们希望学习的真实目标函数 。Ⅱ(·)是指示函数，若 · 为真则为 1，否则取值 0 。）</p>
-<p>此处举一个二分类问题，真实目标函数可以是任何函数 <em>X</em>→{0，1}，函数空间为 {0,1}^|<em>X</em>|，对所有可能的 f 按均匀分布对误差求和，有：</p>
-<p><img src="/images/machine_learning_hobby/%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC1.png" srcset="/img/loading.gif" lazyload alt="公式推导1"></p>
-<p><strong>旁注：</strong>若 f 均匀分布，则有一半的 f 对 x 的预测与 h(x) 不一致</p>
-<p>上述式子最终等于下面这个式子</p>
-<p><img src="/images/machine_learning_hobby/%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC2.png" srcset="/img/loading.gif" lazyload alt="公式推导2"></p>
-<p>上式表示总误差与学习算法无关！也就是：</p>
-<p><img src="/images/machine_learning_hobby/%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC3.png" srcset="/img/loading.gif" lazyload alt="公式推导3"></p>
-<p>这就是著名的 “ 没有免费的午餐 ” 定理 。（此处证明已简化）</p>
-<p>那既然算法的期望性能都一样，那还学什么，直接猜算了</p>
-<p>注意，此定理的前提是所有问题都同等重要 。但是具体问题一般不是同等重要的，也就是要对症下药。此定理告诉我们：脱离具体问题而去谈论学习算法的性能是没有意义的。学习算法的偏好决定了它在某个问题上的性能 。</p>
-<p>有趣的是，此定理还可证明生活当中的一些问题：例如：有一个在厂房旁的房子，晚上会发出机器运转的声音，问这个房子好还是不好？</p>
-<p>答：显然，这可以从经济学的 “ 成本 ” 和  NFL 定理（没有免费午餐定理的简称）共同来说明这个道理，对一个在该厂房上班且不在乎噪音的人来说，他会认为这个房子好，他的成本几乎为零；对于一个喜欢宁静却不在乎上班路程的人，他会认为这个房子简直遭透了！他的成本是巨大的 ；而对于一个即不在乎噪音也不在乎距离的人来说，他无论选择什么，成本都是一样的 。</p>
-<p>参考资料——《机器学习》如有侵权请联系作者删除。</p>
+              <p><img src="../images/spring/%E5%85%A8%E6%96%87%E6%80%9D%E7%BB%B4%E8%84%91%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="全文思维脑图"></p>
+<p class="note note-info"><font size="3" color="blue">What spring?</font></p>
+
+<p><span class="label label-success">Spring 是用 Java 开发的一个软件开发框架。</span></p>
+<p class="note note-info"><font size="3" color="red">Why spring?</font></p>
+
+<p><span class="label label-success">使用 Spring 框架可轻松开发现代化应用。</span></p>
 
             </div>
             <hr>
@@ -303,21 +289,10 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-                    
-                      <a class="hover-with-bg" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+                      <a class="hover-with-bg" href="/categories/Spring%E5%85%A5%E9%97%A8%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Spring入门篇---学习笔记</a>
                     
                   </div>
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
-                    
-                  </div>
                 
               </div>
               
@@ -332,18 +307,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/14/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BA%BA%20%C2%B7%C2%B7%C2%B7%C2%B7%C2%B7%C2%B7%20%EF%BC%9F%20%E4%BA%BA%E4%B8%BA%E4%BB%80%E4%B9%88%20%C2%B7%C2%B7%C2%B7%C2%B7%C2%B7%C2%B7%20%EF%BC%9F/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">为什么人 ······ ？| 人为什么 ······ ？</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/26/2021-02-25-%E8%B0%88%E8%B0%88%E5%81%A5%E5%BA%B7/">
-                        <span class="hidden-mobile">谈谈健康</span>
+                      <a href="/2021/07/16/2021-07-16-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%BB%9F%E6%B2%BB%E5%9C%B0%E7%90%83%E5%90%97%EF%BC%9F/">
+                        <span class="hidden-mobile">人工智能真的会统治地球吗？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
