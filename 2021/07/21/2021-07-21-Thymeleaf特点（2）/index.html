@@ -216,7 +216,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-21 14:40" pubdate>
+      <time datetime="2021-07-21 17:31" pubdate>
         2021年7月21日 下午
       </time>
     </span>
@@ -228,7 +228,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      422 字
+      1.3k 字
     </span>
   
 
@@ -238,7 +238,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      25
        分钟
     </span>
   
@@ -287,7 +287,7 @@
             <div class="markdown-body">
               <p class="note note-info"><font size="3" color="blue">这次我们学习 Thymeleaf 支持的数据类型。</font></p>
 
-<p>字符串型： <strong>‘one text’</strong> <strong>,</strong> <strong>‘Another one!’</strong> <strong>,…</strong> </p>
+<p>字符串型： <strong>&#39;one text&#39;</strong> <strong>,</strong> <strong>&#39;Another one!&#39;</strong> <strong>,…</strong> </p>
 <p>小数及整数：<strong>0</strong> <strong>,</strong> <strong>34</strong> <strong>,</strong> <strong>3.0</strong> <strong>,</strong> <strong>12.3</strong> <strong>,…</strong> </p>
 <p>布尔值：<strong>true</strong> <strong>,</strong> <strong>false</strong> </p>
 <p>空值：<strong>null</strong> </p>
@@ -295,7 +295,7 @@
 <h4 id="字符串型"><a href="#字符串型" class="headerlink" title="字符串型"></a>字符串型</h4><p>就像这样：</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    Now you are looking at a <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;&#x27;working web application&#x27;&quot;</span>&gt;</span>template file<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
-<p>字符串型的数据需要用单引号引起来，不能用双引号。如果单引号也是字符串的一部分，必须要用转义字符 <strong>\‘</strong> 。</p>
+<p>字符串型的数据需要用单引号引起来，不能用双引号。如果单引号也是字符串的一部分，必须要用转义字符 <strong>\&#39;</strong> 。</p>
 <h4 id="数字型"><a href="#数字型" class="headerlink" title="数字型"></a>数字型</h4><p>就像这样：</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The year is <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;2013&quot;</span>&gt;</span>1492<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>In two years, it will be <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;2013 + 2&quot;</span>&gt;</span>1494<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
@@ -316,6 +316,60 @@
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:class</span>=<span class="hljs-string">&quot;content&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> <span class="hljs-comment">&lt;!--文字标记--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:class</span>=<span class="hljs-string">&quot;&#x27;content&#x27;&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <p>可以省去单引号。</p>
+<p>数据类型是值和操作的集合，接下来讲一下基本操作。</p>
+<h4 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接  +"></a>字符串拼接  +</h4><p>无论是文本值还是变量值，都可以用  <strong>+</strong>  进行拼接。</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;&#x27;The name of the user is &#x27; + $&#123;user.name&#125;+.&quot;</span>/&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="文字替换"><a href="#文字替换" class="headerlink" title="文字替换  |"></a>文字替换  |</h4><p>用文字替换实现上述字符串拼接，等效于</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;|The name of the user is, $&#123;user.name&#125;|+.&quot;</span>/&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>也可以混着用</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;user.enname&#125;+|$&#123;user.enname&#125;,$&#123;user.cnname&#125;|+.&quot;</span>/&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>但是文字替换操作仅限 <strong>${…}</strong> <strong>,</strong> <strong>*{…}</strong> <strong>,</strong> <strong>#{…}</strong> 三个表达式。下面的代码会抛出异常。</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;The name are+|$&#123;user.enname&#125;,$&#123;user.cnname&#125;|+.&quot;</span>/&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>给 The name are 用单引号引起是可行的。</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;&#x27;The name are&#x27;+|$&#123;user.enname&#125;,$&#123;user.cnname&#125;|+.&quot;</span>/&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<h4 id="算术运算-和"><a href="#算术运算-和" class="headerlink" title="算术运算  + , - , * , / 和 %"></a>算术运算  + , - , * , / 和 %</h4><p>其中 <strong>/</strong> 有文本别名 <strong>div</strong> ， <strong>%</strong> 有文本别名 <strong>mod</strong> ，在实际代码中两者等效。</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:with</span>=<span class="hljs-string">&quot;isEven=($&#123;prodStat.count&#125; % 2 == 0)&quot;</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>算术运算就是数学运算。</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:with</span>=<span class="hljs-string">&quot;isEven=$&#123;prodStat.count % 2 == 0&#125;&quot;</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>当把 == 放进花括号中，代码将由 OGNL 执行，之前学过了。</p>
+<h4 id="比较-gt-lt-gt-lt"><a href="#比较-gt-lt-gt-lt" class="headerlink" title="比较  &gt;  &lt;  &gt;=  &lt;=  !  ==  !="></a>比较  &gt;  &lt;  &gt;=  &lt;=  !  ==  !=</h4><p>&gt; (gt) ，&lt;(lt) ，&gt;=(ge) ，&lt;=(le) ，!(not) ，==(eq) ，!=(neq / ne)</p>
+<p>符号和英文别名等效。</p>
+<p>要注意，&gt;(gt) 和 &lt;(lt) 不能直接用在属性值的比较中，要用 &amp;gt 和 &amp;lt 代替。</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;&#x27;字符串&#x27;&quot;</span> <span class="hljs-attr">th:if</span>=<span class="hljs-string">&quot;$&#123;user.cnname&#125; <span class="hljs-symbol">&amp;lt;</span> 超杰&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>;</strong> 分割前后两个比较值，字符串也可比较。</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;&#x27;Execution mode is &#x27; + ( ($&#123;user.enname&#125; == &#x27;CJ&#x27;)? &#x27;Development&#x27; : &#x27;Production&#x27;)+&#x27;.&#x27;&quot;</span>/&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>通过比较选择可快速选择显示哪个字符串，(${user.enname} == &#39;CJ&#39;) 为 True 时，显示 <strong>:</strong> 前的字符串 ; 为 False 时，显示 <strong>:</strong> 后的字符串。</p>
+<h4 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h4><p><strong>If-then-else:</strong> <strong>(if) ? (then) : (else)</strong> </p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">th:class</span>=<span class="hljs-string">&quot;$&#123;user.cnname&#125;? &#x27;even&#x27; : &#x27;odd&#x27;&quot;</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>条件成立就选 &#39;even&#39; 否则选 &#39;odd&#39; 。如果省去(else)，没有 <strong>: &#39;odd&#39;</strong> ，那么当条件不成立时则会返回 null 。</p>
+<p>(if) (then) (else) 可以是  <strong>${…}</strong> <strong>、</strong> <strong>*{…}</strong> <strong>、</strong> <strong>#{…}</strong> <strong>、</strong> <strong>@{…}</strong> <strong>、</strong> <strong>&#39;…&#39;</strong></p>
+<p>条件表达式可以嵌套：</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">th:class</span>=<span class="hljs-string">&quot;$&#123;user.enname&#125;? ($&#123;user.cnname&#125;? &#x27;first&#x27; : &#x27;even&#x27;) : &#x27;odd&#x27;&quot;</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p><strong>Default:</strong> <strong>(value) ?: (defaultvalue)</strong> </p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;user.cnname&#125;?: &#x27;佚名&#x27;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>默认表达式是一种特殊的条件表达式，当 (value) 值为 null 时，选择 <strong>:</strong> 后面的值，否则就选择其本身的值，如果本身值为 false ，就选择 false 。默认表达式也可以嵌套。</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;user.cnname&#125;?: ($&#123;user.enname&#125;?: &#x27;佚名&#x27;)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>先判断用户有没有中文名，有就显示中文名；否则再去判断有没有英文名，有就显示英文名；如果都没有就显示佚名。</p>
+<p>把 佚名 放外面，用 _ 替代 &#39;佚名&#39;：</p>
+<figure class="highlight dust"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dust"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$</span></span></span><span class="hljs-template-variable">&#123;user.ename&#125;</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">?: _&quot;</span>&gt;</span>佚名<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br></code></pre></div></td></tr></table></figure>
+
+<p>也会有上面的效果，这样做的好处是更简洁和通用（官方说的）。</p>
+<p class="note note-info"><font size="3" color="blue">所有这些特点都可以被组合和嵌套</font></p>
+
+<p>&#39;User is of type &#39; + (${user.isAdmin()} ? &#39;Administrator&#39; : (${user.type} ?: &#39;Unknown&#39;))</p>
 
             </div>
             <hr>
