@@ -228,7 +228,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      1.4k 字
     </span>
   
 
@@ -238,7 +238,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      25
+      29
        分钟
     </span>
   
@@ -280,18 +280,18 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：几秒前
+                  本文最后更新于：1 分钟前
                 
               </p>
             
             <div class="markdown-body">
               <p class="note note-info"><font size="3" color="blue">这次我们学习 Thymeleaf 支持的数据类型。</font></p>
 
-<p>字符串型： <strong>&#39;one text&#39;</strong> <strong>,</strong> <strong>&#39;Another one!&#39;</strong> <strong>,…</strong> </p>
-<p>小数及整数：<strong>0</strong> <strong>,</strong> <strong>34</strong> <strong>,</strong> <strong>3.0</strong> <strong>,</strong> <strong>12.3</strong> <strong>,…</strong> </p>
-<p>布尔值：<strong>true</strong> <strong>,</strong> <strong>false</strong> </p>
-<p>空值：<strong>null</strong> </p>
-<p>文字标记：<strong>one text</strong> <strong>,</strong> <strong>34</strong> <strong>,…</strong> </p>
+<p><span class="label label-default">字符串型： <strong>&#39;one text&#39;</strong> <strong>,</strong> <strong>&#39;Another one!&#39;</strong> <strong>,…</strong> </span></p>
+<p><span class="label label-info">小数及整数：<strong>0</strong> <strong>,</strong> <strong>34</strong> <strong>,</strong> <strong>3.0</strong> <strong>,</strong> <strong>12.3</strong> <strong>,…</strong> </span></p>
+<p><span class="label label-primary">布尔值：<strong>true</strong> <strong>,</strong> <strong>false</strong> </span></p>
+<p><span class="label label-warning">空值：<strong>null</strong>  </span></p>
+<p><span class="label label-danger">文字标记：<strong>one text</strong> <strong>,</strong> <strong>34</strong> <strong>,…</strong>  </span></p>
 <h4 id="字符串型"><a href="#字符串型" class="headerlink" title="字符串型"></a>字符串型</h4><p>就像这样：</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    Now you are looking at a <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;&#x27;working web application&#x27;&quot;</span>&gt;</span>template file<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
@@ -370,6 +370,16 @@
 <p class="note note-info"><font size="3" color="blue">所有这些特点都可以被组合和嵌套</font></p>
 
 <p>&#39;User is of type &#39; + (${user.isAdmin()} ? &#39;Administrator&#39; : (${user.type} ?: &#39;Unknown&#39;))</p>
+<h4 id="除了处理表达式的特点，thymeleaf-还有预处理表达式的特点。"><a href="#除了处理表达式的特点，thymeleaf-还有预处理表达式的特点。" class="headerlink" title="除了处理表达式的特点，thymeleaf 还有预处理表达式的特点。"></a>除了处理表达式的特点，thymeleaf 还有预处理表达式的特点。</h4><p>如果有一个配置文件 <strong>Messages_fr.properties</strong> ，保存了一个 OGNL 表达式，是用来指定语言的静态方法。</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-meta">article.text</span>=<span class="hljs-string">@myapp.translator.Translator@translateToFrench(&#123;0&#125;) </span><br></code></pre></div></td></tr></table></figure>
+
+<p>当我们根据本地设置来编写代码时，首先要通过预处理选择该表达式：</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;__#&#123;article.text(&#x27;textVar&#x27;)&#125;__&#125;&quot;</span>&gt;</span>Some text here...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>相比（不使用预处理）</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;@myapp.translator.Translator@translateToFrench(textVar)&#125;&quot;</span>&gt;</span>Some text here...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>而言，要简洁的多，预处理符号 __ 可用 \_\_ 代替。双花括号是格式化的语法，仅适用于 <strong>${…}</strong> 和 <strong>*{…}</strong> 。</p>
 
             </div>
             <hr>
