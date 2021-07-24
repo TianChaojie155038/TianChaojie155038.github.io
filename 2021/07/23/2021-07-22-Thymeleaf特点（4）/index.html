@@ -280,7 +280,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 分钟前
+                  本文最后更新于：几秒前
                 
               </p>
             
@@ -311,10 +311,10 @@
 <p>在迭代变量 <strong>web</strong> 后面用逗号隔开加入状态变量 <strong>iterStat</strong> 以使用状态变量，两者作用域相同，<strong>iterStat</strong>  特性如下：</p>
 <p><strong>iterStat.index</strong> 返回当前的索引值，从0开始（int型）</p>
 <p><strong>iterStat.count</strong> 返回迭代的第几个元素数，从1开始（int型）</p>
-<p><strong>iter.size</strong> 返回元素总个数（int型）</p>
-<p><strong>iter.current</strong> 返回当前的迭代变量，即一个对象（例如在这里web(url=<a target="_blank" rel="noopener" href="https://www.tcjblog.com/">https://www.tcjblog.com</a>, name=个人网站)）</p>
-<p><strong>iter.even/odd</strong> 返回一个布尔值，检测是否为偶数/奇数</p>
-<p><strong>iter.first/last</strong> 返回一个布尔值，检测是否为 第一个/最后一个 元素</p>
+<p><strong>iterStat.size</strong> 返回元素总个数（int型）</p>
+<p><strong>iterStat.current</strong> 返回当前的迭代变量，即一个对象（例如在这里web(url=<a target="_blank" rel="noopener" href="https://www.tcjblog.com/">https://www.tcjblog.com</a>, name=个人网站)）</p>
+<p><strong>iterStat.even/odd</strong> 返回一个布尔值，检测是否为偶数/奇数</p>
+<p><strong>iterStat.first/last</strong> 返回一个布尔值，检测是否为 第一个/最后一个 元素</p>
 <p>如果没有显示的创建迭代变量，Thymeleaf 将会通过在迭代变量后附加上 <strong>Stat</strong> 来创建它，例如这样：</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;web : $&#123;webs&#125;&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;webStat.even&#125;? &#x27;第偶数个网站：&#x27;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">th:href</span>=<span class="hljs-string">&quot;$&#123;web.url&#125;&quot;</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;web.name&#125;&quot;</span>&gt;</span>默认<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
