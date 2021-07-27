@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Thymeleaf特点（8）</title>
+    <link href="/2021/07/27/2021-07-27-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%888%EF%BC%89/"/>
+    <url>/2021/07/27/2021-07-27-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%888%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<p class="note note-warning"><font size="3" color="pink">这次我们来学习属性优先级。</font></p><p>What happens when you write more than one <strong>th:*</strong> attribute in the same tag?For example:</p><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;item : $&#123;items&#125;&quot;</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;item.description&#125;&quot;</span>&gt;</span>Item description here...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></div></td></tr></table></figure><p>We would expect that <strong>th:each</strong> attribute to execute before the <strong>th:text</strong> so that we get the results we want.</p><p>Thymeleaf 通过建立数字优先级机制来保证我们得到想要的结果：（数字越小优先级越高）</p><table>    <tr>        <th>Order</th>        <th>Feature</th>        <th>Attributes</th>    </tr>    <tr>        <th>1</th>        <th>Fragment inclusion</th>        <th>th:insert/th:replace</th>    </tr>    <tr>        <th>2</th>        <th>Fragment iteration</th>        <th>th:each</th>    </tr>    <tr>        <th>3</th>        <th>Conditional evaluation</th>        <th>th:if/th:unless/th:switch/th:case</th>    </tr>    <tr>        <th>4</th>        <th>Local variable definitiont</th>        <th>th:object/th:with</th>    </tr>    <tr>        <th>5</th>        <th>General attribute modification</th>        <th>th:attr/th:attrprepend/th:attrappend</th>    </tr>    <tr>        <th>6</th>        <th>Specific attribute modification</th>        <th>th:value/th:href/th:src/...</th>    </tr>    <tr>        <th>7</th>        <th>Text (tag body modification)</th>        <th>th:text/th:utext</th>    </tr>    <tr>        <th>8</th>        <th>Fragment specification</th>        <th>th:fragment</th>    </tr>    <tr>        <th>9</th>        <th>Fragment removal</th>        <th>th:remove</th>    </tr></table>Even if the attribute position is inverted(althougn it would be slightly less readable):<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;item.description&#125;&quot;</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;item : $&#123;items&#125;&quot;</span>&gt;</span>Item description here...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Thymeleaf进阶篇---学习笔记</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Thymeleaf特点（7）</title>
     <link href="/2021/07/27/2021-07-27-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%887%EF%BC%89/"/>
     <url>/2021/07/27/2021-07-27-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%887%EF%BC%89/</url>
