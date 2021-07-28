@@ -20,7 +20,7 @@
   <meta name="author" content="TCJ">
   <meta name="keywords" content="">
   
-  <title>计算机系统漫游 | TCJ&#39;s Blog</title>
+  <title>Thymeleaf特点（9） | TCJ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -196,12 +196,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/images/blue.jpg') no-repeat center center;
+         style="background: url('/images/Thymeleaf/Thymeleaf.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="计算机系统漫游">
+            <span class="h2" id="subtitle" title="Thymeleaf特点（9）">
               
             </span>
 
@@ -216,8 +216,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-08 20:22" pubdate>
-        2021年2月8日 晚上
+      <time datetime="2021-07-28 10:08" pubdate>
+        2021年7月28日 上午
       </time>
     </span>
   
@@ -228,7 +228,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      939 字
     </span>
   
 
@@ -238,7 +238,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      24
+      22
        分钟
     </span>
   
@@ -276,42 +276,60 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">计算机系统漫游</h1>
+            <h1 style="display: none">Thymeleaf特点（9）</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：11 天前
+                  本文最后更新于：2 分钟前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="计算机系统漫游-理论"><a href="#计算机系统漫游-理论" class="headerlink" title="计算机系统漫游(理论)"></a>计算机系统漫游(理论)</h1><p>计算机系统是由硬件和系统软件组成的，它们共同工作来运行应用程序。</p>
-<h6 id="我们通过跟踪-hello-程序的生命周期来开始对系统的学习。-下图为hello程序"><a href="#我们通过跟踪-hello-程序的生命周期来开始对系统的学习。-下图为hello程序" class="headerlink" title="我们通过跟踪 hello 程序的生命周期来开始对系统的学习。(下图为hello程序)"></a>我们通过跟踪 hello 程序的生命周期来开始对系统的学习。(下图为hello程序)</h6><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;hello,world\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+              <p class="note note-secondary"><font size="3" color="black">这次我们来学习Thymeleaf特有的注释模块。</font></p>
 
-<p>hello程序的生命周期是从一个源程序（或者说源文件）开始的。源程序实际上就是一个由值 0 和 1 组成的位（又称为比特）序列，8 个被组织成一组，称为字节。像 hello .c这样只由 ASCII字符构成的文件称为文本文件，所有其他文件都称为二进制文件。其表示方法说明了一个基本思想：系统中所有的信息——包括磁盘文件、内存中的程序、内存中存放的用户数据以及网络上传送的数据，都是由一串比特表示的。However , 为了在系统上运行 hello .c程序，每条 C 语句都必须被其他程序转化为一系列的低级机器语言指令。（下图为转化过程）</p>
-<p><img src="/images/cs/1.png" srcset="/img/loading.gif" lazyload alt="1"></p>
-<h6 id="那么在运行-hello-程序时，硬件发生了什么呢？（下图为一个典型系统的硬件组织）"><a href="#那么在运行-hello-程序时，硬件发生了什么呢？（下图为一个典型系统的硬件组织）" class="headerlink" title="那么在运行 hello 程序时，硬件发生了什么呢？（下图为一个典型系统的硬件组织）"></a>那么在运行 hello 程序时，硬件发生了什么呢？（下图为一个典型系统的硬件组织）</h6><p><img src="/images/cs/2.png" srcset="/img/loading.gif" lazyload alt="2"></p>
-<p>First，我们打开 shell 程序（一个命令行解释器，它输出一个提示符，等待输入一个命令行，然后执行这个命令。），then，在键盘上输入字符串“./hello”，shell 程序将字符逐一读入寄存器，再把它存放到内存中。（以下是示意图）</p>
-<p><img src="/images/cs/3.png" srcset="/img/loading.gif" lazyload alt="3"></p>
-<p>Last，敲下回车。shell 会执行一系列指令来加载可执行的 hello 文件，这些指令将 hello 目标文件中的代码和数据从磁盘复制到主存。数据包括最终会被输出的字符串 “hello, world\n”。（以下是示意图）</p>
-<p><img src="/images/cs/4.png" srcset="/img/loading.gif" lazyload alt="4"></p>
-<p>一旦目标文件 hello 中的代码和数据被加载到主存，处理器就开始执行 hello 程序的 main 程序中的机器语言指令。这些指令将“hello, world\n” 字符串中的字节从主存复制到寄存器文件，再从寄存器文件中复制到显示设备，最终显示在屏幕上。（以下是示意图）</p>
-<p><img src="/images/cs/5.png" srcset="/img/loading.gif" lazyload alt="5"></p>
-<h6 id="接下来再讲讲在这之中的重点"><a href="#接下来再讲讲在这之中的重点" class="headerlink" title="接下来再讲讲在这之中的重点"></a>接下来再讲讲在这之中的重点</h6><h4 id="高速缓存及存储器层次结构"><a href="#高速缓存及存储器层次结构" class="headerlink" title="高速缓存及存储器层次结构"></a>高速缓存及存储器层次结构</h4><p>hello 程序的运行告诉我们，系统花了大量的时间在迁移数据。而通过让高速缓存里存放可能经常访问的数据，可提高访问速度。我们再来看看存储器层次结构示例（如下图）</p>
-<p><img src="/images/cs/6.png" srcset="/img/loading.gif" lazyload alt="6"></p>
-<p>设想一下，我们让程序倾向于更频繁地访问某一个层次上的存储设备，那么下一层的存储设备就可以更慢速一点，也因此可以更大，每个比特位更便宜。这样做的结果就是我们可以接近于层次结构顶部存储设备的高效率向程序提供数据，却有一个与层次结构底层最便宜的存储设备相当的成本。这在计算机程序中被称为<u>局部性</u>。</p>
-<h4 id="操作系统管理硬件并提供清晰的抽象"><a href="#操作系统管理硬件并提供清晰的抽象" class="headerlink" title="操作系统管理硬件并提供清晰的抽象"></a>操作系统管理硬件并提供清晰的抽象</h4><p>在现实世界中，实际存在的是PCB板（印刷电路板），而不是 hello 程序，操作系统就负责管理复杂的硬件体系。正因为此，Linux 或 Windows 操作系统的源代码有500万行甚至更高的数量级。相当于几十个书架中每页 50 行，每卷 1000 页的书的总和。</p>
-<p><img src="/images/cs/7.png" srcset="/img/loading.gif" lazyload alt="7"></p>
-<h4 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h4><p>进程是操作系统提供的重要抽象之一，它是操作系统对一个正在运行的程序的一种抽象。这种抽象使得程序看上去是独占地使用处理器、主存和 I/O设备。用户在使用计算机时经常会同时开启多个程序，系统启动时，会秘密启动许多进程，我们一般认为它们是同时运行的。但实际上，在某一个瞬间，CPU只能运行一个进程，但在一秒钟内，它可能运行多个进程，这样就产生并行的错觉。</p>
-<h4 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h4><p>在现代系统中，一个进程实际上可以由多个称为线程的执行单元组成，每个线程都运行在进程的上下文中，并共享同样的代码和全局数据。</p>
-<h4 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h4><p>虚拟内存也是操作系统提供的重要抽象之一，它为每个进程提供了一个假象，即每个进程都在独占地使用主存。每个进程看到的内存都是一致的，称为虚拟地址空间。（以下是示例图）</p>
-<p><img src="/images/cs/8.png" srcset="/img/loading.gif" lazyload alt="8"></p>
-<h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><p>每个I/O设备，包括磁盘、键盘、显示器，甚至网络，都可以看成是文件。使用该抽象，程序能创建、读写文件，而不用处理硬件实际工作中那些恼人的细节。例如：处理磁盘文件内容的应用程序员可以非常幸福，因为他们无须了解具体的磁盘技术，进一步说，同一个程序可以在使用不同磁盘技术的不同系统上运行。</p>
-<h4 id="系统间用网络通信"><a href="#系统间用网络通信" class="headerlink" title="系统间用网络通信"></a>系统间用网络通信</h4><p>系统漫游至此，我们一直是把系统视为一个孤立的硬件和软件的集合体。从一个单独的系统来看，网络可视为一个I/O设备，如下图所示。当系统从主存复制一串字节到网络适配器时，数据流经过网络到达另一台机器，而不是比如说到达本地磁盘驱动器。</p>
-<p><img src="/images/cs/9.png" srcset="/img/loading.gif" lazyload alt="9"></p>
-<h4 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h4><p>我们用的术语并发（concurrency）是一个通用的概念，指一个同时具有多个活动的系统；而术语并行（parallelism）指的是用并发来使一个系统运行得更快。</p>
-<h4 id="计算机系统中抽象的重要性"><a href="#计算机系统中抽象的重要性" class="headerlink" title="计算机系统中抽象的重要性"></a>计算机系统中抽象的重要性</h4><p>抽象的使用是计算机科学中最为重要的概念之一。例如，为一组函数规定一个简单的应用程序接口（API）就是一个很好的编程习惯，程序员无须了解它内部的工作便可以使用这些代码。不同的编程语言提供不同形式和等级的抽象支持，例如 Java 类的声明和 C 语言的函数原型。</p>
-<p>参考文献——《深入理解计算机系统》原书第三版、《现代操作系统》原书第四版 如有侵权请联系作者删除。</p>
+<h4 id="Standard-HTML-SML-comments"><a href="#Standard-HTML-SML-comments" class="headerlink" title="Standard HTML/SML comments"></a>Standard HTML/SML comments</h4><p>&lt;!– … –&gt; 注释可以用在 Thymeleaf 模板中的任何地方，但是不会被 Thymeleaf 处理，它会随着必要的代码一字不差的复制到网页的源代码页</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;#&#123;hone.welcome&#125;&quot;</span> <span class="hljs-attr">th:fragment</span>=<span class="hljs-string">&quot;copy&quot;</span>&gt;</span>Welcome to our grocery store!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>en_Name: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;*&#123;user.enname&#125;&quot;</span>&gt;</span>Sebastian<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>cn_Name: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;user.cnname&#125;&quot;</span>&gt;</span>塞巴斯蒂安<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 哎呀暴露了！本页面是地下赌场的隐藏入口！--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;menu :: menu-copy(~&#123;::title&#125;)&quot;</span> <span class="hljs-attr">th:assert</span>=<span class="hljs-string">&quot;1,2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>...<br></code></pre></div></td></tr></table></figure>
+
+<p><img src="/images/Thymeleaf/%E7%BD%91%E9%A1%B5%E6%BA%90%E7%A0%81.png" srcset="/img/loading.gif" lazyload alt="网页源码"></p>
+<p>👮‍♂️：你再说，我在听 </p>
+<p>🏃‍♂️：额，先撤了</p>
+<p>咳~开玩笑的，我们继续学习</p>
+<h4 id="Thymeleaf-parser-level-comment-blocks"><a href="#Thymeleaf-parser-level-comment-blocks" class="headerlink" title="Thymeleaf parser-level comment blocks"></a>Thymeleaf parser-level comment blocks</h4><p>&lt;!–/* This code will be removed at Thymeleaf parsing time! */–&gt; 注释会在 Thymeleaf 解析它的时候将它从网页源码页中移出</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;#&#123;hone.welcome&#125;&quot;</span> <span class="hljs-attr">th:fragment</span>=<span class="hljs-string">&quot;copy&quot;</span>&gt;</span>Welcome to our grocery store!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>en_Name: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;*&#123;user.enname&#125;&quot;</span>&gt;</span>Sebastian<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>cn_Name: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;user.cnname&#125;&quot;</span>&gt;</span>塞巴斯蒂安<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-comment">&lt;!--/* 哎呀暴露了！本页面是地下赌场的隐藏入口！*/--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;menu :: menu-copy(~&#123;::title&#125;)&quot;</span> <span class="hljs-attr">th:assert</span>=<span class="hljs-string">&quot;1,2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>...<br></code></pre></div></td></tr></table></figure>
+
+<p><img src="/images/Thymeleaf/%E7%BD%91%E9%A1%B5%E6%BA%90%E7%A0%81%E7%A7%BB.png" srcset="/img/loading.gif" lazyload alt="网页源码移"></p>
+<p>🦸‍♂️：嘿~哪有啊</p>
+<p>👮‍♂️：刚那人呢</p>
+<p>Thymeleaf will remove everything between &lt;!–/* and */–&gt; like:</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--/*--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>you can see me only before Thymeleaf processes me! <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-comment">&lt;!--*/--&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p> 甚至可以在里面放代码，因为它会在 Thymeleaf 解析它时把它移除。</p>
+<p><strong>th:remove</strong> 属性也可以移除代码块 , it can behave in five different ways,depending on its value:</p>
+<p> <strong>·</strong> <strong>all</strong> : Remove both the containing tag and all its children.</p>
+<p> <strong>·</strong> <strong>body</strong> : Do not remove the containing tag, but remove all its children. </p>
+<p> <strong>·</strong> <strong>tag</strong> : Remove the containing tag, but do not remove its children. </p>
+<p> <strong>·</strong> <strong>all-but-first</strong> : Remove all children of the containing tag except the first one. </p>
+<p> <strong>·</strong> <strong>none</strong> : Do nothing. This value is useful for dynamic evaluation. </p>
+<p>对于 none 值，there is a example:</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/something&quot;</span> <span class="hljs-attr">th:remove</span>=<span class="hljs-string">&quot;$&#123;condition&#125;? tag : none&quot;</span>&gt;</span>Link text not to be removed<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>And the following works the same as the example above:</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/something&quot;</span> <span class="hljs-attr">th:remove</span>=<span class="hljs-string">&quot;$&#123;condition&#125;? tag&quot;</span>&gt;</span>Link text not to be removed<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>Because the <strong>th:remove</strong> considers null a synonym to none.In this case,if  <strong>${condition}</strong> is false,<strong>null</strong> will be returned.</p>
+<p>扯远了，我们继续学习注释</p>
+<h4 id="Thymeleaf-prototype-only-comment-blocks"><a href="#Thymeleaf-prototype-only-comment-blocks" class="headerlink" title="Thymeleaf prototype-only comment blocks"></a>Thymeleaf prototype-only comment blocks</h4><p>like:</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hello!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-comment">&lt;!--/*/</span><br><span class="hljs-comment">	&lt;div th:text=&quot;$&#123;...&#125;&quot;&gt;</span><br><span class="hljs-comment">	  ...</span><br><span class="hljs-comment">	&lt;/div&gt; </span><br><span class="hljs-comment">/*/--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>goodbye!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>But Thymeleaf’s parsing system will simply remove the &lt;!–/*/ and /*/–&gt; markers,but not its contents,which will be left therefore uncommented.So when executing the template,Thymeleaf will actually see this:</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>hello!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;...&#125;&quot;</span>&gt;</span><br>      ... <br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>goodbye!<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>这注释只会在开发时被程序员看到，但 Thymeleaf 处理时会自动将它忽略，执行其内部的代码，当作为标准 HTML 页面打开时，注释仍然存在。</p>
+<h4 id="Synthetic-th-block-tag"><a href="#Synthetic-th-block-tag" class="headerlink" title="Synthetic th:block tag"></a>Synthetic th:block tag</h4><p>Thymeleaf’s only element processor (not an attribute) included in the Standard Dialects is <strong>th:block</strong> .</p>
+<p>它和 prototype-only comment blocks 一起使用会非常简洁：</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--/*/ &lt;th:block th:each=&quot;user : $&#123;users&#125;&quot;&gt; /*/--&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;user.login&#125;&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;user.name&#125;&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">colspan</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;user.address&#125;&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--/*/ &lt;/th:block&gt; /*/--&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>程序猿可以在 &lt;th:block&gt; 标签内定义任何自己想要的属性，剩下的交给 Thymeleaf ，当 &lt;th:block&gt; 被执行时，Thymeleaf 会移除 block 而留下它的 内容，就像被注释掉一样，更加简洁。</p>
 
             </div>
             <hr>
@@ -321,17 +339,10 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6/">计算机软件</a>
+                      <a class="hover-with-bg" href="/categories/Thymeleaf%E8%BF%9B%E9%98%B6%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Thymeleaf进阶篇---学习笔记</a>
                     
                   </div>
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6/">计算机软件</a>
-                    
-                  </div>
                 
               </div>
               
@@ -346,18 +357,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/09/%E6%96%87%E5%8C%96%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">文化是什么？</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/07/%E5%8F%A4%E4%BA%BA%E8%8D%80%E5%AD%90%E5%AD%A6%E4%B9%A0%E8%A7%82%E2%80%94%E2%80%94%E2%80%94%E3%80%8A%E5%8A%9D%E5%AD%A6%E3%80%8B/">
-                        <span class="hidden-mobile">古人荀子学习观———《劝学》</span>
+                      <a href="/2021/07/27/2021-07-27-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%888%EF%BC%89/">
+                        <span class="hidden-mobile">Thymeleaf特点（8）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
