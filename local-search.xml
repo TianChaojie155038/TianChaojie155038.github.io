@@ -248,11 +248,11 @@
   
   
   <entry>
-    <title>实现一个简单的例子</title>
-    <link href="/2021/07/19/2021-07-18-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90/"/>
-    <url>/2021/07/19/2021-07-18-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90/</url>
+    <title>Spring Security 处理登录</title>
+    <link href="/2021/07/19/2021-07-19-Spring-Security-%E5%A4%84%E7%90%86%E7%99%BB%E5%BD%95/"/>
+    <url>/2021/07/19/2021-07-19-Spring-Security-%E5%A4%84%E7%90%86%E7%99%BB%E5%BD%95/</url>
     
-    <content type="html"><![CDATA[<p>最简单的spring应用包含一个控制器和一个视图。控制器负责处理网页请求，视图则负责渲染浏览器。</p><img src="/images/spring/控制器类和html视图.png" alt="demo" style="zoom:80%;" /><p>不过我们这里还有模型（Model），用来中转数据。</p><p>home控制器类：</p><img src="/images/spring/home控制器.png" alt="home控制器" style="zoom:67%;" /><p>home视图（thymeleaf模板）：</p><img src="/images/spring/home视图.png" alt="home视图" style="zoom:67%;" /><p class="note note-info"><font size="3" >Thymeleaf帮助文档可在博客的下载页面下载</font></p><p>开始运行：控制台输出一些信息，例如开启的端口等</p><img src="/images/spring/控制台打印.png" alt="控制台打印" style="zoom:80%;" /><p>在浏览器中输入网址访问</p><img src="/images/spring/web.png" alt="web" style="zoom:58%;" /><p>视图中的默认数据被模型中的数据替代了。</p>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
     
     <categories>
@@ -267,11 +267,11 @@
   
   
   <entry>
-    <title>Spring Security 处理登录</title>
-    <link href="/2021/07/19/2021-07-19-Spring-Security-%E5%A4%84%E7%90%86%E7%99%BB%E5%BD%95/"/>
-    <url>/2021/07/19/2021-07-19-Spring-Security-%E5%A4%84%E7%90%86%E7%99%BB%E5%BD%95/</url>
+    <title>实现一个简单的例子</title>
+    <link href="/2021/07/19/2021-07-18-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90/"/>
+    <url>/2021/07/19/2021-07-18-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>最简单的spring应用包含一个控制器和一个视图。控制器负责处理网页请求，视图则负责渲染浏览器。</p><img src="/images/spring/控制器类和html视图.png" alt="demo" style="zoom:80%;" /><p>不过我们这里还有模型（Model），用来中转数据。</p><p>home控制器类：</p><img src="/images/spring/home控制器.png" alt="home控制器" style="zoom:67%;" /><p>home视图（thymeleaf模板）：</p><img src="/images/spring/home视图.png" alt="home视图" style="zoom:67%;" /><p class="note note-info"><font size="3" >Thymeleaf帮助文档可在博客的下载页面下载</font></p><p>开始运行：控制台输出一些信息，例如开启的端口等</p><img src="/images/spring/控制台打印.png" alt="控制台打印" style="zoom:80%;" /><p>在浏览器中输入网址访问</p><img src="/images/spring/web.png" alt="web" style="zoom:58%;" /><p>视图中的默认数据被模型中的数据替代了。</p>]]></content>
     
     
     <categories>
@@ -328,7 +328,7 @@
     <link href="/2021/07/18/2021-07-18-%E5%8D%9A%E5%AE%A2%E6%B5%8F%E8%A7%88%E5%AF%BC%E8%88%AA/"/>
     <url>/2021/07/18/2021-07-18-%E5%8D%9A%E5%AE%A2%E6%B5%8F%E8%A7%88%E5%AF%BC%E8%88%AA/</url>
     
-    <content type="html"><![CDATA[<p><span class="label label-success"><font size = "3">感谢关注我的博客，你可以点击博客顶部的导航栏中的分类或标签，从而挑选自己感兴趣的话题。</font></span></p><p><span class="label label-success"><font size = "3">由于浏览器有缓存，所以请手动刷新网页以查看更新。</font></span></p>]]></content>
+    <content type="html"><![CDATA[<p><span class="label label-success"><font size = "3">由于浏览器有缓存，所以请手动刷新网页以查看更新。</font></span></p><p><span class="label label-success"><font size = "3">感谢关注我的博客，你可以点击博客顶部的导航栏中的分类或标签，从而挑选自己感兴趣的话题。</font></span></p>]]></content>
     
     
     
