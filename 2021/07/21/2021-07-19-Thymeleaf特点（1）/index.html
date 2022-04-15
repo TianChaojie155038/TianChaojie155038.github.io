@@ -20,7 +20,7 @@
   <meta name="author" content="TCJ">
   <meta name="keywords" content="">
   
-  <title>Thymeleaf特点（1） | TCJ&#39;s Blog</title>
+  <title>Thymeleaf特点（1）- 初探语法 | TCJ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Thymeleaf特点（1）">
+            <span class="h2" id="subtitle" title="Thymeleaf特点（1）- 初探语法">
               
             </span>
 
@@ -280,18 +280,16 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Thymeleaf特点（1）</h1>
+            <h1 style="display: none">Thymeleaf特点（1）- 初探语法</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 个月前
+                  本文最后更新于：3 小时前
                 
               </p>
             
             <div class="markdown-body">
-              <p class="note note-info"><font size="3" color="blue">前后端分离，从这里开始。</font></p>
-
-<p>Thymeleaf  支持对 <strong>HTML</strong> <strong>XML</strong>  <strong>TEXT</strong>  <strong>JAVASCRIPT</strong>  <strong>CSS</strong>  <strong>RAW</strong> 6种模板的处理。</p>
+              <p>Thymeleaf  支持对 <strong>HTML</strong> <strong>XML</strong>  <strong>TEXT</strong>  <strong>JAVASCRIPT</strong>  <strong>CSS</strong>  <strong>RAW</strong> 6种模板的处理。</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns:th</span>=<span class="hljs-string">&quot;http://www.thymeleaf.org&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Good Thymes Virtual Grocery<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;#&#123;home.welcome&#125;&quot;</span>&gt;</span>Welcome to our grocery store!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <p>在&lt;html&gt;标签中加入 xmlns:th 属性，可以让诸如 th:* 的语法被支持。该语法是 Thymeleaf 所特有的，在程序运行期间，&lt;p&gt;&lt;/p&gt;标签会优先显示 home.welcome 的值，如果找不到值，才会显示默认的 “Welcome to our grocery store!” 。</p>
@@ -373,6 +371,13 @@
                   </div>
                 
                 
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Thymeleaf/">Thymeleaf</a>
+                    
+                  </div>
+                
               </div>
               
                 <p class="note note-warning">
@@ -388,7 +393,7 @@
                     
                       <a href="/2021/07/21/2021-07-21-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%882%EF%BC%89/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Thymeleaf特点（2）</span>
+                        <span class="hidden-mobile">Thymeleaf特点（2）- 数据类型</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     

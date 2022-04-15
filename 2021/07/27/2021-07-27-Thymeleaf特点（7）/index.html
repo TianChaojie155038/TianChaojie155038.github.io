@@ -20,7 +20,7 @@
   <meta name="author" content="TCJ">
   <meta name="keywords" content="">
   
-  <title>Thymeleaf特点（7） | TCJ&#39;s Blog</title>
+  <title>Thymeleaf特点（7）- 局部变量 | TCJ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Thymeleaf特点（7）">
+            <span class="h2" id="subtitle" title="Thymeleaf特点（7）- 局部变量">
               
             </span>
 
@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      318 字
+      317 字
     </span>
   
 
@@ -280,11 +280,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Thymeleaf特点（7）</h1>
+            <h1 style="display: none">Thymeleaf特点（7）- 局部变量</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 个月前
+                  本文最后更新于：3 小时前
                 
               </p>
             
@@ -298,7 +298,7 @@
 <p>那一般的声明局部变量的语句是什么？</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:with</span>=<span class="hljs-string">&quot;isEven=($&#123;prodStat.count&#125; % 2 == 0)&quot;</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
-<p>The importment <strong>th:with</strong> attribute. 在学习算术运算的时候就出现过。 <a href="https://tcjblog.com/2021/07/21/2021-07-21-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%882%EF%BC%89/#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97-%E5%92%8C
+<p><strong>th:with</strong> 属性在学习算术运算的时候就出现过。 <a href="https://tcjblog.com/2021/07/21/2021-07-21-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%882%EF%BC%89/#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97-%E5%92%8C
 " target="_blank"><font color="red">点此进入数据类型学习</font></a></p>
 <p>当 <strong>th:with</strong> 执行的时候，<strong>isEven</strong> 变量会被创建并被加入到上下文中的变量集合里以便管理，但是它的作用范围仅是当前标签和它的子标签。</p>
 <p>You can also define several variables at the same time using the usual multiple assignment syntax:</p>
@@ -321,6 +321,13 @@
                   </div>
                 
                 
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Thymeleaf/">Thymeleaf</a>
+                    
+                  </div>
+                
               </div>
               
                 <p class="note note-warning">
@@ -336,7 +343,7 @@
                     
                       <a href="/2021/07/27/2021-07-27-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%888%EF%BC%89/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Thymeleaf特点（8）</span>
+                        <span class="hidden-mobile">Thymeleaf特点（8）- 属性优先级</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -345,7 +352,7 @@
                     
                     
                       <a href="/2021/07/27/2021-07-24-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%886%EF%BC%89/">
-                        <span class="hidden-mobile">Thymeleaf特点（6）</span>
+                        <span class="hidden-mobile">Thymeleaf特点（6）- 模块化</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

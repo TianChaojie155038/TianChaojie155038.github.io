@@ -20,7 +20,7 @@
   <meta name="author" content="TCJ">
   <meta name="keywords" content="">
   
-  <title>Thymeleaf特点（5） | TCJ&#39;s Blog</title>
+  <title>Thymeleaf特点（5）- 条件语句 | TCJ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Thymeleaf特点（5）">
+            <span class="h2" id="subtitle" title="Thymeleaf特点（5）- 条件语句">
               
             </span>
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      23
+      25
        分钟
     </span>
   
@@ -280,11 +280,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Thymeleaf特点（5）</h1>
+            <h1 style="display: none">Thymeleaf特点（5）- 条件语句</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 个月前
+                  本文最后更新于：3 小时前
                 
               </p>
             
@@ -329,6 +329,10 @@
 <p>当有任何一个 <strong>th:case</strong> 属性满足条件时，其它的所有 <strong>th:case</strong> 属性都将被赋予 <strong>false</strong> ，不会再去匹配。</p>
 <p><strong>th:case=&quot;*&quot;</strong> 表示默认情况，一定能匹配（如果其它条件都不匹配）</p>
 <p>和 <strong>Java</strong> 里的 <strong>Switch</strong> 类似，不再赘述。</p>
+<h4 id="应用实例：通过延迟检索数据优化网页加载速度"><a href="#应用实例：通过延迟检索数据优化网页加载速度" class="headerlink" title="应用实例：通过延迟检索数据优化网页加载速度"></a>应用实例：通过延迟检索数据优化网页加载速度</h4><p>目前我们仅需一个条件判断</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">th:if</span>=<span class="hljs-string">&quot;$&#123;condition&#125;&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;u : $&#123;users&#125;&quot;</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;u.name&#125;&quot;</span>&gt;</span>user name<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>只当 <strong>condition</strong> 成立时，用户名才会被加载。</p>
 
             </div>
             <hr>
@@ -342,6 +346,13 @@
                     
                   </div>
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Thymeleaf/">Thymeleaf</a>
+                    
+                  </div>
                 
               </div>
               
@@ -358,7 +369,7 @@
                     
                       <a href="/2021/07/27/2021-07-24-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%886%EF%BC%89/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Thymeleaf特点（6）</span>
+                        <span class="hidden-mobile">Thymeleaf特点（6）- 模块化</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -367,7 +378,7 @@
                     
                     
                       <a href="/2021/07/23/2021-07-22-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%884%EF%BC%89/">
-                        <span class="hidden-mobile">Thymeleaf特点（4）</span>
+                        <span class="hidden-mobile">Thymeleaf特点（4）- 迭代</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

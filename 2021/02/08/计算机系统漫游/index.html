@@ -20,7 +20,7 @@
   <meta name="author" content="TCJ">
   <meta name="keywords" content="">
   
-  <title>计算机系统漫游 | TCJ&#39;s Blog</title>
+  <title>计算机系统漫游(理论) | TCJ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -200,12 +200,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/images/blue.jpg') no-repeat center center;
+         style="background: url('/images/cs/%E4%B8%BB.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="计算机系统漫游">
+            <span class="h2" id="subtitle" title="计算机系统漫游(理论)">
               
             </span>
 
@@ -280,16 +280,16 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">计算机系统漫游</h1>
+            <h1 style="display: none">计算机系统漫游(理论)</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：9 个月前
+                  本文最后更新于：8 分钟前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="计算机系统漫游-理论"><a href="#计算机系统漫游-理论" class="headerlink" title="计算机系统漫游(理论)"></a>计算机系统漫游(理论)</h1><p>计算机系统是由硬件和系统软件组成的，它们共同工作来运行应用程序。</p>
+              <p>计算机系统是由硬件和系统软件组成的，它们共同工作来运行应用程序。</p>
 <h6 id="我们通过跟踪-hello-程序的生命周期来开始对系统的学习。-下图为hello程序"><a href="#我们通过跟踪-hello-程序的生命周期来开始对系统的学习。-下图为hello程序" class="headerlink" title="我们通过跟踪 hello 程序的生命周期来开始对系统的学习。(下图为hello程序)"></a>我们通过跟踪 hello 程序的生命周期来开始对系统的学习。(下图为hello程序)</h6><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;hello,world\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
 <p>hello程序的生命周期是从一个源程序（或者说源文件）开始的。源程序实际上就是一个由值 0 和 1 组成的位（又称为比特）序列，8 个被组织成一组，称为字节。像 hello .c这样只由 ASCII字符构成的文件称为文本文件，所有其他文件都称为二进制文件。其表示方法说明了一个基本思想：系统中所有的信息——包括磁盘文件、内存中的程序、内存中存放的用户数据以及网络上传送的数据，都是由一串比特表示的。However , 为了在系统上运行 hello .c程序，每条 C 语句都必须被其他程序转化为一系列的低级机器语言指令。（下图为转化过程）</p>
@@ -315,7 +315,7 @@
 <p><img src="/images/cs/9.png" srcset="/img/loading.gif" lazyload alt="9"></p>
 <h4 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h4><p>我们用的术语并发（concurrency）是一个通用的概念，指一个同时具有多个活动的系统；而术语并行（parallelism）指的是用并发来使一个系统运行得更快。</p>
 <h4 id="计算机系统中抽象的重要性"><a href="#计算机系统中抽象的重要性" class="headerlink" title="计算机系统中抽象的重要性"></a>计算机系统中抽象的重要性</h4><p>抽象的使用是计算机科学中最为重要的概念之一。例如，为一组函数规定一个简单的应用程序接口（API）就是一个很好的编程习惯，程序员无须了解它内部的工作便可以使用这些代码。不同的编程语言提供不同形式和等级的抽象支持，例如 Java 类的声明和 C 语言的函数原型。</p>
-<p>参考文献——《深入理解计算机系统》原书第三版、《现代操作系统》原书第四版 如有侵权请联系作者删除。</p>
+<p>—【参考文献 ——《深入理解计算机系统》原书第三版、《现代操作系统》原书第四版 如有侵权请联系作者删除】</p>
 
             </div>
             <hr>

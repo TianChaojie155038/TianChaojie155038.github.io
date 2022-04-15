@@ -20,7 +20,7 @@
   <meta name="author" content="TCJ">
   <meta name="keywords" content="">
   
-  <title>Thymeleaf特点（6） | TCJ&#39;s Blog</title>
+  <title>Thymeleaf特点（6）- 模块化 | TCJ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Thymeleaf特点（6）">
+            <span class="h2" id="subtitle" title="Thymeleaf特点（6）- 模块化">
               
             </span>
 
@@ -280,11 +280,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Thymeleaf特点（6）</h1>
+            <h1 style="display: none">Thymeleaf特点（6）- 模块化</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 个月前
+                  本文最后更新于：3 小时前
                 
               </p>
             
@@ -331,22 +331,22 @@
 <p> <strong>·</strong> ~{templatename::selector} ：<strong>templatename</strong> 是 <strong>html</strong> 文件名，<strong>selector</strong> 是文件中目标片段的 <strong>th:fragment</strong> 属性值。</p>
 <p> <strong>·</strong> ~{templatename}：表示复制整个模板。</p>
 <p> <strong>·</strong> ~{::selector} or ~{this::selector} ：表示在当前模板中用 selector 匹配目标片段。</p>
-<p>Note that <strong>templatename</strong> 必须要能够被当前模板引擎使用的模板解析器正确解析 or if selector 没有匹配到片段，会报异常，~{} 依然可以被省略。</p>
+<p>注意到 <strong>templatename</strong> 必须要能够被当前模板引擎使用的模板解析器正确解析 ，否则如果 selector 没有匹配到片段，会报异常，~{} 依然可以被省略。</p>
 <p>Both <strong>templatename</strong> and <strong>selector</strong> can be fully-featured expressions(even conditionals!)like:</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;menu :: ($&#123;page.home&#125;? #&#123;menu.home&#125;:#&#123;menu.common&#125;)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
-<p>In the above example,主页面会加载一个特有的导航栏，前提是 menu 文件中有该目标片段。</p>
+<p>在上面的例子中,主页面会加载一个特有的导航栏，前提是 menu 文件中有该目标片段。</p>
 <p>（没有主页面跳转链接的导航栏，本来就不需要φ(*￣0￣)）</p>
 <p>🙋‍♀️：直接在主页面的模板中指定用主页面导航栏不就行了？需要判断吗？</p>
 <p>🤦‍♂️：好像也是φ(゜▽゜*)♪，咳咳~这就是一个说明可以用条件式的例子罢了（🤷‍♂️我不管~~）</p>
 <p><strong>id</strong> 属性可以代替 <strong>th:fragment</strong> ，片段被复制到新的模板中之后也可以引用模板中的变量，there is a example</p>
 <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@GetMapping(&quot;/&quot;)</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">home</span><span class="hljs-params">(Model model)</span></span>&#123;<br>        String enname = <span class="hljs-string">&quot;TCJ&quot;</span>;<br>        String cnname = <span class="hljs-string">&quot;田超杰&quot;</span>;<br>        String nname = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-keyword">boolean</span> admin = <span class="hljs-keyword">true</span>;<br>        model.addAttribute(<span class="hljs-string">&quot;user&quot;</span>,<span class="hljs-keyword">new</span> users(enname,cnname,nname,admin));<br>        model.addAttribute(<span class="hljs-string">&quot;webs&quot;</span>,webs);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;home&quot;</span>;<br>    &#125;<br></code></pre></div></td></tr></table></figure>
 
-<p>First,在主页控制器往模型中添加 user 数据</p>
-<p>Then,特制 导航栏</p>
+<p>首先,在主页控制器往模型中添加 user 数据</p>
+<p>然后,特制 导航栏</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;houtai-copy&quot;</span> <span class="hljs-attr">th:if</span>=<span class="hljs-string">&quot;$&#123;user.admin&#125;&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/houtai.html&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">th:href</span>=<span class="hljs-string">&quot;@&#123;/hhhhhhhoutai&#125;&quot;</span>&gt;</span>管理员后台<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">menu</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
-<p>Last,在主页模板中进行复制</p>
+<p>最后,在主页模板中进行复制</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;menu :: #houtai-copy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <p>只有管理员访问网站时才会看到 <u>管理员后台</u> 的跳转链接。</p>
@@ -362,7 +362,7 @@
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:replace</span>=<span class="hljs-string">&quot;::frag (twovar=$&#123;value2&#125;,onevar=$&#123;value1&#125;)&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <hr>
-<h5 id="Even-if-在构造的时候没有声明参数，也可以在调用的时候加入"><a href="#Even-if-在构造的时候没有声明参数，也可以在调用的时候加入" class="headerlink" title="Even if 在构造的时候没有声明参数，也可以在调用的时候加入"></a>Even if 在构造的时候没有声明参数，也可以在调用的时候加入</h5><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--声明--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:fragment</span>=<span class="hljs-string">&quot;frag&quot;</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<h5 id="即使在构造的时候没有声明参数，也可以在调用的时候加入"><a href="#即使在构造的时候没有声明参数，也可以在调用的时候加入" class="headerlink" title="即使在构造的时候没有声明参数，也可以在调用的时候加入"></a>即使在构造的时候没有声明参数，也可以在调用的时候加入</h5><figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--声明--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:fragment</span>=<span class="hljs-string">&quot;frag&quot;</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--调用--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:replace</span>=<span class="hljs-string">&quot;::frag(onevar=$&#123;value1&#125;,towvar=$&#123;value2&#125;)&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
@@ -371,18 +371,18 @@
 <hr>
 <p>和编程语言不同的是，被调用的片段可以使用该模板的上下文变量，而 Java 只允许使用同一个类中的全局变量和传进来的参数。</p>
 <hr>
-<p>Now，扩展一下语法</p>
+<p>现在，扩展一下语法</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--构造，注意 title 和 links 变量的使用--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span> <span class="hljs-attr">th:fragment</span>=<span class="hljs-string">&quot;common_header(title,links)&quot;</span>&gt;</span><br>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span> <span class="hljs-attr">th:replace</span>=<span class="hljs-string">&quot;$&#123;title&#125;&quot;</span>&gt;</span>The shopping application<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <br>    <span class="hljs-comment">&lt;!-- Common styles and scripts --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;all&quot;</span> <span class="hljs-attr">th:href</span>=<span class="hljs-string">&quot;@&#123;/css/shoppingapp.css&#125;&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;shortcut icon&quot;</span> <span class="hljs-attr">th:href</span>=<span class="hljs-string">&quot;@&#123;/images/favicon.ico&#125;&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">th:src</span>=<span class="hljs-string">&quot;@&#123;/sh/scripts/codebase.js&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <br>    <span class="hljs-comment">&lt;!--/* Per-page placeholder for additional links */--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">th:block</span> <span class="hljs-attr">th:replace</span>=<span class="hljs-string">&quot;$&#123;links&#125;&quot;</span> /&gt;</span><br>    <br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">...<br><span class="hljs-comment">&lt;!--调用，注意参数的语法--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span> <span class="hljs-attr">th:replace</span>=<span class="hljs-string">&quot;base :: common_header(~&#123;::title&#125;,~&#123;::link&#125;)&quot;</span>&gt;</span><br>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Shopping - Main<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">th:href</span>=<span class="hljs-string">&quot;@&#123;/css/bootstrap.min.css&#125;&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">th:href</span>=<span class="hljs-string">&quot;@&#123;/themes/smoothness/jquery-ui.css&#125;&quot;</span>&gt;</span><br>    <br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>...<br></code></pre></div></td></tr></table></figure>
 
-<p>Running it and the result is:</p>
+<p>运行它并且结果如下:</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Shopping - Main<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <br>    <span class="hljs-comment">&lt;!-- Common styles and scripts --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;all&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/css/shoppingapp.css&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;shortcut icon&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/images/favicon.ico&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/sho/sh/scripts/codebase.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/css/bootstrap.min.css&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/themes/smoothness/jquery-ui.css&quot;</span>&gt;</span><br>    <br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>...<br></code></pre></div></td></tr></table></figure>
 
 <p> 再稍改一下</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span> <span class="hljs-attr">th:replace</span>=<span class="hljs-string">&quot;base :: common_header(~&#123;::title&#125;,~&#123;&#125;)&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Shopping - Main<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>...<br></code></pre></div></td></tr></table></figure>
 
-<p>The result is:</p>
+<p>结果是:</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Shopping - Main<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <br>    <span class="hljs-comment">&lt;!-- Common styles and scripts --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;all&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/css/Shoppingapp.css&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;shortcut icon&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/images/favicon.ico&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/sho/sh/scripts/codebase.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span> <br>    <br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>...<br></code></pre></div></td></tr></table></figure>
 
 <p>使用默认值的语法 _</p>
@@ -395,7 +395,7 @@
 <p><strong>th:insert</strong> 的表达式也可以是conditionals like:</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;$&#123;user.isAdmin()&#125; ? ~&#123;common :: adminhead&#125; : ~&#123;&#125;&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>...<br></code></pre></div></td></tr></table></figure>
 
-<p>also like:</p>
+<p>又或者:</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;$&#123;user.isAdmin()&#125; ? ~&#123;common :: adminhead&#125; : _&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>...<br></code></pre></div></td></tr></table></figure>
 
 <p>之前学习的 </p>
@@ -424,6 +424,13 @@
                   </div>
                 
                 
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Thymeleaf/">Thymeleaf</a>
+                    
+                  </div>
+                
               </div>
               
                 <p class="note note-warning">
@@ -439,7 +446,7 @@
                     
                       <a href="/2021/07/27/2021-07-27-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%887%EF%BC%89/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Thymeleaf特点（7）</span>
+                        <span class="hidden-mobile">Thymeleaf特点（7）- 局部变量</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -448,7 +455,7 @@
                     
                     
                       <a href="/2021/07/24/2021-07-23-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%885%EF%BC%89/">
-                        <span class="hidden-mobile">Thymeleaf特点（5）</span>
+                        <span class="hidden-mobile">Thymeleaf特点（5）- 条件语句</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

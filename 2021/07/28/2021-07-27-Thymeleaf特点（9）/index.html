@@ -20,7 +20,7 @@
   <meta name="author" content="TCJ">
   <meta name="keywords" content="">
   
-  <title>Thymeleaf特点（9） | TCJ&#39;s Blog</title>
+  <title>Thymeleaf特点（9）- 注释 | TCJ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Thymeleaf特点（9）">
+            <span class="h2" id="subtitle" title="Thymeleaf特点（9）- 注释">
               
             </span>
 
@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      939 字
+      945 字
     </span>
   
 
@@ -280,11 +280,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Thymeleaf特点（9）</h1>
+            <h1 style="display: none">Thymeleaf特点（9）- 注释</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 个月前
+                  本文最后更新于：3 小时前
                 
               </p>
             
@@ -317,7 +317,7 @@
 <p>对于 none 值，there is a example:</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/something&quot;</span> <span class="hljs-attr">th:remove</span>=<span class="hljs-string">&quot;$&#123;condition&#125;? tag : none&quot;</span>&gt;</span>Link text not to be removed<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
-<p>And the following works the same as the example above:</p>
+<p>下面的例子运行效果与上述例子一样:</p>
 <figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/something&quot;</span> <span class="hljs-attr">th:remove</span>=<span class="hljs-string">&quot;$&#123;condition&#125;? tag&quot;</span>&gt;</span>Link text not to be removed<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
 
 <p>Because the <strong>th:remove</strong> considers null a synonym to none.In this case,if  <strong>${condition}</strong> is false,<strong>null</strong> will be returned.</p>
@@ -348,6 +348,13 @@
                   </div>
                 
                 
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Thymeleaf/">Thymeleaf</a>
+                    
+                  </div>
+                
               </div>
               
                 <p class="note note-warning">
@@ -372,7 +379,7 @@
                     
                     
                       <a href="/2021/07/27/2021-07-27-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%888%EF%BC%89/">
-                        <span class="hidden-mobile">Thymeleaf特点（8）</span>
+                        <span class="hidden-mobile">Thymeleaf特点（8）- 属性优先级</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
