@@ -284,7 +284,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 分钟前
+                  本文最后更新于：15 分钟前
                 
               </p>
             
@@ -292,12 +292,12 @@
               <p>计算机系统是由硬件和系统软件组成的，它们共同工作来运行应用程序。</p>
 <h6 id="我们通过跟踪-hello-程序的生命周期来开始对系统的学习。-下图为hello程序"><a href="#我们通过跟踪-hello-程序的生命周期来开始对系统的学习。-下图为hello程序" class="headerlink" title="我们通过跟踪 hello 程序的生命周期来开始对系统的学习。(下图为hello程序)"></a>我们通过跟踪 hello 程序的生命周期来开始对系统的学习。(下图为hello程序)</h6><figure class="highlight c"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;hello,world\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
-<p>hello程序的生命周期是从一个源程序（或者说源文件）开始的。源程序实际上就是一个由值 0 和 1 组成的位（又称为比特）序列，8 个被组织成一组，称为字节。像 hello .c这样只由 ASCII字符构成的文件称为文本文件，所有其他文件都称为二进制文件。其表示方法说明了一个基本思想：系统中所有的信息——包括磁盘文件、内存中的程序、内存中存放的用户数据以及网络上传送的数据，都是由一串比特表示的。However , 为了在系统上运行 hello .c程序，每条 C 语句都必须被其他程序转化为一系列的低级机器语言指令。（下图为转化过程）</p>
+<p>hello程序的生命周期是从一个源程序（或者说源文件）开始的。源程序实际上就是一个由值 0 和 1 组成的位（又称为比特）序列，8 个被组织成一组，称为字节。像 hello .c这样只由 ASCII字符构成的文件称为文本文件，所有其他文件都称为二进制文件。其表示方法说明了一个基本思想：系统中所有的信息——包括磁盘文件、内存中的程序、内存中存放的用户数据以及网络上传送的数据，都是由一串比特表示的。然而 , 为了在系统上运行 hello .c程序，每条 C 语句都必须被其他程序转化为一系列的低级机器语言指令。（下图为转化过程）</p>
 <p><img src="/images/cs/1.png" srcset="/img/loading.gif" lazyload alt="1"></p>
 <h6 id="那么在运行-hello-程序时，硬件发生了什么呢？（下图为一个典型系统的硬件组织）"><a href="#那么在运行-hello-程序时，硬件发生了什么呢？（下图为一个典型系统的硬件组织）" class="headerlink" title="那么在运行 hello 程序时，硬件发生了什么呢？（下图为一个典型系统的硬件组织）"></a>那么在运行 hello 程序时，硬件发生了什么呢？（下图为一个典型系统的硬件组织）</h6><p><img src="/images/cs/2.png" srcset="/img/loading.gif" lazyload alt="2"></p>
-<p>First，我们打开 shell 程序（一个命令行解释器，它输出一个提示符，等待输入一个命令行，然后执行这个命令。），then，在键盘上输入字符串“./hello”，shell 程序将字符逐一读入寄存器，再把它存放到内存中。（以下是示意图）</p>
+<p>首先，我们打开 shell 程序（一个命令行解释器，它输出一个提示符，等待输入一个命令行，然后执行这个命令。），然后，在键盘上输入字符串“./hello”，shell 程序将字符逐一读入寄存器，再把它存放到内存中。（以下是示意图）</p>
 <p><img src="/images/cs/3.png" srcset="/img/loading.gif" lazyload alt="3"></p>
-<p>Last，敲下回车。shell 会执行一系列指令来加载可执行的 hello 文件，这些指令将 hello 目标文件中的代码和数据从磁盘复制到主存。数据包括最终会被输出的字符串 “hello, world\n”。（以下是示意图）</p>
+<p>最后，敲下回车。shell 会执行一系列指令来加载可执行的 hello 文件，这些指令将 hello 目标文件中的代码和数据从磁盘复制到主存。数据包括最终会被输出的字符串 “hello, world\n”。（以下是示意图）</p>
 <p><img src="/images/cs/4.png" srcset="/img/loading.gif" lazyload alt="4"></p>
 <p>一旦目标文件 hello 中的代码和数据被加载到主存，处理器就开始执行 hello 程序的 main 程序中的机器语言指令。这些指令将“hello, world\n” 字符串中的字节从主存复制到寄存器文件，再从寄存器文件中复制到显示设备，最终显示在屏幕上。（以下是示意图）</p>
 <p><img src="/images/cs/5.png" srcset="/img/loading.gif" lazyload alt="5"></p>
@@ -315,6 +315,7 @@
 <p><img src="/images/cs/9.png" srcset="/img/loading.gif" lazyload alt="9"></p>
 <h4 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h4><p>我们用的术语并发（concurrency）是一个通用的概念，指一个同时具有多个活动的系统；而术语并行（parallelism）指的是用并发来使一个系统运行得更快。</p>
 <h4 id="计算机系统中抽象的重要性"><a href="#计算机系统中抽象的重要性" class="headerlink" title="计算机系统中抽象的重要性"></a>计算机系统中抽象的重要性</h4><p>抽象的使用是计算机科学中最为重要的概念之一。例如，为一组函数规定一个简单的应用程序接口（API）就是一个很好的编程习惯，程序员无须了解它内部的工作便可以使用这些代码。不同的编程语言提供不同形式和等级的抽象支持，例如 Java 类的声明和 C 语言的函数原型。</p>
+<hr>
 <p>—【参考文献 ——《深入理解计算机系统》原书第三版、《现代操作系统》原书第四版 如有侵权请联系作者删除】</p>
 
             </div>
