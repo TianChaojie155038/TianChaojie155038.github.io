@@ -22,11 +22,11 @@
   
   <title>Thymeleaf特点（3）- 赋值 | 田超杰的个人网站</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
 
   
     
@@ -37,7 +37,7 @@
   
 
   
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
   
 
 
@@ -48,7 +48,7 @@
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -58,7 +58,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0,"placement":"right"},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"follow_dnt":true},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -238,20 +238,12 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      37
+      26
        分钟
     </span>
   
 
   
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
   
 </div>
 
@@ -288,19 +280,19 @@
               <p class="note note-secondary"><font size="3" color="pink">这次我们学习给属性赋值或修改值。</font></p>
 
 <h4 id="给任何属性赋值-th-attr"><a href="#给任何属性赋值-th-attr" class="headerlink" title="给任何属性赋值  th:attr"></a>给任何属性赋值  th:attr</h4><p>现在有一个订阅服务用来推送网站更新消息，并且可通过 /localhost:8080/subscribe 链接跳转到订阅界面进行订阅。主要有一个表单来获取订阅的邮件。</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;subscribe.html&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;subscribe!&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;subscribe.html&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;subscribe!&quot;</span> /&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>action 属性指定了 subscribe 模板本身，&quot;subscribe!&quot; 会显示在按钮上。如果订阅的人看不懂英文，或者不希望发送表单数据到 subscribe.html 上，这就一点都不方便了！</p>
 <p>通过 <strong>th:attr</strong> 动态的给属性赋值，再创建对应的控制器和配置文件就行！</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;subscribe.html&quot;</span> <span class="hljs-attr">th:attr</span>=<span class="hljs-string">&quot;action=@&#123;/subscribe&#125;&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Subscribe!&quot;</span> <span class="hljs-attr">th:attr</span>=<span class="hljs-string">&quot;value=#&#123;subscribe.submit&#125;&quot;</span>/&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;subscribe.html&quot;</span> <span class="hljs-attr">th:attr</span>=<span class="hljs-string">&quot;action=@&#123;/subscribe&#125;&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Subscribe!&quot;</span> <span class="hljs-attr">th:attr</span>=<span class="hljs-string">&quot;value=#&#123;subscribe.submit&#125;&quot;</span>/&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>th:attr</strong> 还可以动态的给多个属性赋值，不同属性之间用逗号隔开。</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/gtvglogo.png&quot;</span></span><br><span class="hljs-tag">	 <span class="hljs-attr">th:attr</span>=<span class="hljs-string">&quot;src=@&#123;/images/gtvglogo.png&#125;,title=#&#123;logo&#125;,alt=#&#123;logo&#125;&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/gtvglogo.png&quot;</span></span><br><span class="hljs-tag">	 <span class="hljs-attr">th:attr</span>=<span class="hljs-string">&quot;src=@&#123;/images/gtvglogo.png&#125;,title=#&#123;logo&#125;,alt=#&#123;logo&#125;&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>此时有聪明的小伙伴可能会提出疑问，我直接用 <strong>th:*</strong> 的格式对特定的属性进行赋值不更方便吗？Thymeleaf 官方也同意你的想法，且给出了例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Subscribe!&quot;</span> <span class="hljs-attr">th:value</span>=<span class="hljs-string">&quot;#&#123;subscribe.submit&#125;&quot;</span>/&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Subscribe!&quot;</span> <span class="hljs-attr">th:value</span>=<span class="hljs-string">&quot;#&#123;subscribe.submit&#125;&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;subscribe.html&quot;</span> <span class="hljs-attr">th:action</span>=<span class="hljs-string">&quot;@&#123;/subscribe&#125;&quot;</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;subscribe.html&quot;</span> <span class="hljs-attr">th:action</span>=<span class="hljs-string">&quot;@&#123;/subscribe&#125;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="这里有大量像这样的属性，每一种都针对一个-HTML5-的属性："><a href="#这里有大量像这样的属性，每一种都针对一个-HTML5-的属性：" class="headerlink" title="这里有大量像这样的属性，每一种都针对一个 HTML5 的属性："></a>这里有大量像这样的属性，每一种都针对一个 HTML5 的属性：</h4><table>
     <tr>
@@ -571,13 +563,13 @@
 
 <hr>
 <p>之前讲到了用 <strong>th:attr</strong> 给多个属性赋值</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/gtvglogo.png&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">th:attr</span>=<span class="hljs-string">&quot;src=@&#123;/images/gtvglogo.png&#125;,title=#&#123;logo&#125;,alt=#&#123;logo&#125;&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/gtvglogo.png&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">th:attr</span>=<span class="hljs-string">&quot;src=@&#123;/images/gtvglogo.png&#125;,title=#&#123;logo&#125;,alt=#&#123;logo&#125;&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>我们再来看看怎么用表格中的语法完成赋值</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/gtvglogo.png&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">th:src</span>=<span class="hljs-string">&quot;@&#123;/images/gtvglogo.png&#125;&quot;</span> <span class="hljs-attr">th:title</span>=<span class="hljs-string">&quot;#&#123;logo&#125;&quot;</span> <span class="hljs-attr">th:alt</span>=<span class="hljs-string">&quot;#&#123;logo&#125;&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/gtvglogo.png&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">th:src</span>=<span class="hljs-string">&quot;@&#123;/images/gtvglogo.png&#125;&quot;</span> <span class="hljs-attr">th:title</span>=<span class="hljs-string">&quot;#&#123;logo&#125;&quot;</span> <span class="hljs-attr">th:alt</span>=<span class="hljs-string">&quot;#&#123;logo&#125;&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>接下来用更简洁的方法 <strong>(th:alt-title)</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/gtvglogo.png&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">th:src</span>=<span class="hljs-string">&quot;@&#123;/images/gtvglogo.png&#125;&quot;</span> <span class="hljs-attr">th:alt-title</span>=<span class="hljs-string">&quot;#&#123;logo&#125;&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;../../images/gtvglogo.png&quot;</span></span><br><span class="hljs-tag">     <span class="hljs-attr">th:src</span>=<span class="hljs-string">&quot;@&#123;/images/gtvglogo.png&#125;&quot;</span> <span class="hljs-attr">th:alt-title</span>=<span class="hljs-string">&quot;#&#123;logo&#125;&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><strong>th:alt-title</strong> 是一个相当特殊的语法，和它一样特殊的还有 <strong>th:lang-xmllang</strong> ，它们可以同时给两个属性赋值：</p>
 <p><strong>th:alt-title</strong> 同时给 <strong>alt</strong> 和 <strong>title</strong> 赋值；</p>
@@ -585,23 +577,23 @@
 <p>到现在为止，学到的动态赋值的方法都是直接将原值覆盖掉，不过 Thylemeaf 官方还提供了附加值的方法：</p>
 <p><strong>th:attrappend</strong>（在现有值后面附加） <strong>和</strong> <strong>th:attrprepend</strong>（在现有值前附加） <strong>属性。</strong></p>
 <p>如果一个网页的渲染需要用户提前选择样式，那代码就可以这么写：</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Do it!&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">th:attrappend</span>=<span class="hljs-string">&quot;class=$&#123;&#x27; &#x27; + cssStyle&#125;&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Do it!&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">th:attrappend</span>=<span class="hljs-string">&quot;class=$&#123;&#x27; &#x27; + cssStyle&#125;&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>当用户选择了 cssStyle=warning 的样式，这份代码就相当于：</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Do it!&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn warning&quot;</span> /&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Do it!&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn warning&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>附加值的方法同样提供了针对某一个 HTML5 属性的属性：</p>
 <p><strong>th:classappend</strong> <strong>和</strong> <strong>th:styleappend</strong> <strong>属性。</strong> 给 class 属性值后附加值就可以这样写：</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;prod : $&#123;prods&#125;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">th:classappend</span>=<span class="hljs-string">&quot;$&#123;prodStat.odd&#125;? &#x27;odd&#x27;&quot;</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;prod : $&#123;prods&#125;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">th:classappend</span>=<span class="hljs-string">&quot;$&#123;prodStat.odd&#125;? &#x27;odd&#x27;&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <h4 id="固定值布尔属性"><a href="#固定值布尔属性" class="headerlink" title="固定值布尔属性"></a>固定值布尔属性</h4><img src="/images/Thymeleaf/订阅查名.png" srcset="/img/loading.gif" lazyload alt="订阅查名" style="zoom:67%;" />
 
 <p>倘若用户在订阅网站的更新消息时需要勾选是否有 英文名、中文名，普通的做法是创建三个复选框或单选框：</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;isenname&quot;</span> /&gt;</span>是否有英文名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iscnname&quot;</span> /&gt;</span>是否有中文名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;isname&quot;</span> /&gt;</span>是否佚名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;isenname&quot;</span> /&gt;</span>是否有英文名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iscnname&quot;</span> /&gt;</span>是否有中文名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;isname&quot;</span> /&gt;</span>是否佚名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>然后由用户自行选择。</p>
 <p>但是用户在网站注册账号时就已经提供了相关信息，名字都已记录在数据库中，我们是否可以先去数据库中查询相关信息，再预先帮用户选择呢？完全可以。</p>
-<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;isenname&quot;</span> <span class="hljs-attr">th:checked</span>=<span class="hljs-string">&quot;$&#123;user.enname&#125;&quot;</span> /&gt;</span>是否有英文名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iscnname&quot;</span> <span class="hljs-attr">th:checked</span>=<span class="hljs-string">&quot;$&#123;user.cnname&#125;&quot;</span> /&gt;</span>是否有中文名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;isname&quot;</span> <span class="hljs-attr">th:checked</span>=<span class="hljs-string">&quot;$&#123;user.nname&#125;&quot;</span> /&gt;</span>是否佚名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;isenname&quot;</span> <span class="hljs-attr">th:checked</span>=<span class="hljs-string">&quot;$&#123;user.enname&#125;&quot;</span> /&gt;</span>是否有英文名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iscnname&quot;</span> <span class="hljs-attr">th:checked</span>=<span class="hljs-string">&quot;$&#123;user.cnname&#125;&quot;</span> /&gt;</span>是否有中文名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;isname&quot;</span> <span class="hljs-attr">th:checked</span>=<span class="hljs-string">&quot;$&#123;user.nname&#125;&quot;</span> /&gt;</span>是否佚名<br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>如果没有名字，user.nname 值为 true ，th:check 属性的值为 true 或不为 null 或 是非零数字 时，浏览器都会预先勾选上选择框（即设置成固定值）；否则，值为 false 或为 null 或为 0 或为 off 或为 no 时 ，不会勾选。 （除了 0 和 null ，其它都可被单引号围住）</p>
 <h4 id="固定值布尔属性还有："><a href="#固定值布尔属性还有：" class="headerlink" title="固定值布尔属性还有："></a>固定值布尔属性还有：</h4><table>
@@ -721,23 +713,6 @@
                   
                 
                 
-  <div id="valine"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
-        var options = Object.assign(
-          {"appId":"pUsriROtT96qnazCUQkQIfup-gzGzoHsz","appKey":"WzGT9QkutgU2TLDKeM9rBSyn","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
-          {
-            el: "#valine",
-            path: window.location.pathname
-          }
-        )
-        new Valine(options);
-      });
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
 
               </article>
             
@@ -849,8 +824,8 @@ setInterval("createtime()",250);
 
   <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -861,8 +836,8 @@ setInterval("createtime()",250);
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -879,19 +854,19 @@ setInterval("createtime()",250);
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+  <script  src="https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js" ></script>
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+  <script  src="https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js" ></script>
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+  <script defer src="https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js" ></script>
 
 
 
@@ -904,7 +879,7 @@ setInterval("createtime()",250);
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
