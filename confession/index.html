@@ -246,13 +246,6 @@
     });
 
 
-    function J() {
-        modal('行，我们去民政局登记吧', function () {
-            typeWrite();
-            fireworks();
-        });
-    }
-
     function fireworks() {
         $('.page_one').addClass('hide');
         $('.page_two').removeClass('hide');
@@ -265,18 +258,10 @@
     }
 
     function modal(content, callback) {
-        var tpl = '<div class="container">' +
-            '<div class="mask"></div>' +
-            '<div class="modal">' +
-            '<p>' + content + '</p>' +
-            '<button type="button" id="confirm" class="confirm">确定</button>' +
-            '</div>' +
-            '</div>';
-        $('body').append(tpl);
-        $(document).on('click', '.confirm', function () {
-            $('.container').remove();
-            callback();
-        });
+
+        $('.container').remove();
+        callback();
+
     }
 
     var myWords = '有人说，人的一生会遇到2920万人，而两个人相爱的概率只有0.000049。在这茫茫人海中，两个人能相遇就值得感激，能相爱更是一种难得。所以，我很庆幸上天让我遇见了你。我希望你能陪我走过余下的一生，能看完我写过的所有状态，读完我所有的日志，看完我从小到大的照片，试着听我喜欢的歌。如果可以，甚至陪我去我喜欢的地方，只想弥补错过你的青春。';
@@ -411,6 +396,7 @@ void main(void) {
     distancefade = min(1.0, exp((uFade.x - pdist) * 0.69315 / uFade.y));
 }
 
+
 </script>
 <script id="sakura_point_fsh" type="x-shader/x_fragment">
 			#ifdef GL_ES
@@ -484,6 +470,7 @@ void main(void) {
     gl_FragColor = vec4(col * 0.5, alpha);
 }
 
+
 </script>
 <!-- effects -->
 <script id="fx_common_vsh" type="x-shader/x_vertex">
@@ -498,6 +485,7 @@ void main(void) {
     texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
+
 
 </script>
 <script id="bg_fsh" type="x-shader/x_fragment">
@@ -520,6 +508,7 @@ void main(void) {
     gl_FragColor = vec4(col * 0.5, 1.0);
 }
 
+
 </script>
 <script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
 			#ifdef GL_ES
@@ -536,6 +525,7 @@ void main(void) {
     vec4 col = texture2D(uSrc, texCoord);
     gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
 }
+
 
 </script>
 <script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
@@ -559,6 +549,7 @@ void main(void) {
     gl_FragColor = col / 5.0;
 }
 
+
 </script>
 <!-- effect fragment shader template -->
 <script id="fx_common_fsh" type="x-shader/x_fragment">
@@ -576,6 +567,7 @@ void main(void) {
     gl_FragColor = texture2D(uSrc, texCoord);
 }
 
+
 </script>
 <!-- post processing -->
 <script id="pp_final_vsh" type="x-shader/x_vertex">
@@ -588,6 +580,7 @@ void main(void) {
     texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
     screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
 }
+
 
 </script>
 <script id="pp_final_fsh" type="x-shader/x_fragment">
@@ -611,6 +604,7 @@ void main(void) {
     gl_FragColor = vec4(col.rgb, 1.0);
     gl_FragColor.a = 1.0;
 }
+
 
 </script>
 </body>
