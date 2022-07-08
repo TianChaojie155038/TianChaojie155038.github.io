@@ -66,7 +66,7 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.3.0"></head>
 
 
 <body>
@@ -306,19 +306,15 @@
 <p>像 text 、each 、href 、insert 、if 、th:text 、th:each 、th:href 、th:insert 、th:if 等属性中的 text 、each 等都是 属性≠变量。</p>
 <p>那 Thymeleaf 中的变量是什么？我们之前在学习迭代的时候就碰到过一个迭代变量—web <a href="https://tcjblog.com/2021/07/23/2021-07-22-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%884%EF%BC%89/" target="_blank"><font color="red">点此进入迭代学习</font></a></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>链接选项<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;web : $&#123;webs&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">th:href</span>=<span class="hljs-string">&quot;$&#123;web.url&#125;&quot;</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;web.name&#125;&quot;</span>&gt;</span>默认<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>	<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
 <p>那一般的声明局部变量的语句是什么？</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:with</span>=<span class="hljs-string">&quot;isEven=($&#123;prodStat.count&#125; % 2 == 0)&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
 <p><strong>th:with</strong> 属性在学习算术运算的时候就出现过。 <a href="https://tcjblog.com/2021/07/21/2021-07-21-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%882%EF%BC%89/#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97-%E5%92%8C
 " target="_blank"><font color="red">点此进入数据类型学习</font></a></p>
 <p>当 <strong>th:with</strong> 执行的时候，<strong>isEven</strong> 变量会被创建并被加入到上下文中的变量集合里以便管理，但是它的作用范围仅是当前标签和它的子标签。</p>
 <p>You can also define several variables at the same time using the usual multiple assignment syntax:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:with</span>=<span class="hljs-string">&quot;isEven=($&#123;prodStat.count&#125; % 2 == 0),isOdd=($&#123;prodStat.count&#125; % 2 != 0)&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
 <p>The <strong>th:with</strong> attribute allows reusing variables defined in the same attribute:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:with</span>=<span class="hljs-string">&quot;isEven=($&#123;prodStat.count&#125; % 2 == 0),isOdd= not isEven&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
 
             </div>
             <hr>

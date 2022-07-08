@@ -66,7 +66,7 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.3.0"></head>
 
 
 <body>
@@ -333,13 +333,10 @@
 <p><img src="/images/%E4%BF%A1%E6%81%AF%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E6%9D%BF%E5%8F%8D%E9%9D%A2.jpg" srcset="/img/loading.gif" lazyload alt="开发板反面"></p>
 <p>黄色的LED灯是电源指示灯，其旁边的按钮是复位按钮，用于复位内部程序。再旁边的是电池供电接口，可以用电池给它供电。开发板的正面有5x5的LED阵列和两个按钮，我们可以通过编程来控制它们，从而实现一些有意思的功能。</p>
 <h6 id="实践：显示文字"><a href="#实践：显示文字" class="headerlink" title="实践：显示文字"></a>实践：显示文字</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> microbit <span class="hljs-keyword">import</span> *<br><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>: <span class="hljs-comment"># 无限次循环</span><br>    display.scroll(<span class="hljs-string">&#x27;Hello World!&#x27;</span>) <span class="hljs-comment"># 滚动显示文字</span><br></code></pre></td></tr></table></figure>
-
 <p>或者</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> microbit <span class="hljs-keyword">import</span> *<br><br>display.scroll(<span class="hljs-string">&#x27;Hello World!&#x27;</span>,loop = <span class="hljs-literal">True</span>) <span class="hljs-comment"># 滚动显示文字</span><br></code></pre></td></tr></table></figure>
-
 <p>上述代码实现了无限次循坏显示“Hello World!”的功能。</p>
 <h6 id="实践：显示环境温度"><a href="#实践：显示环境温度" class="headerlink" title="实践：显示环境温度"></a>实践：显示环境温度</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> microbit <span class="hljs-keyword">import</span> *<br><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    display.scroll(temperature()) <span class="hljs-comment"># temperature()函数用于获取板载传感器检测到的温度</span><br>    sleep(<span class="hljs-number">100</span>) <span class="hljs-comment"># 每显示完一次室温后延时0.1s再显示下一次</span><br></code></pre></td></tr></table></figure>
-
 <hr>
 <p>— 【参考资料 ——  网络文献】</p>
 
