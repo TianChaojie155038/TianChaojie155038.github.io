@@ -24,25 +24,9 @@
   <meta name="author" content="TCJ">
   <meta name="keywords" content="计算机知识、草塔中学学生、人生哲理">
   
-  <title>Spring项目结构分析 | 田超杰的个人网站-一个传播计算机知识和人生哲理的博客</title>
+  <title>归档 | 田超杰的个人网站-一个传播计算机知识和人生哲理的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-  
 
 
 
@@ -70,7 +54,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -212,68 +196,22 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/images/spring/spring.png') no-repeat center center;
+         style="background: url('/images/%E7%81%AB%E6%98%9F%E8%BD%A6.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Spring项目结构分析">
+            <span class="h2" id="subtitle" title="归档">
               
             </span>
 
             
-              <div class="mt-3">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-author" aria-hidden="true"></i>
-      TCJ
-    </span>
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-18 19:32" pubdate>
-        2021年7月18日 晚上
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      242 字
-    </span>
-  
-
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      2
-       分钟
-    </span>
-  
-
-  
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
-  
-</div>
-
-            
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -282,111 +220,40 @@
 
   <main>
     
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="list-group">
+  <p class="h4">共计 52 篇文章</p>
+  <hr>
+  
+  
+    
       
+      <p class="h5">2022</p>
+    
+    <a href="/2022/07/08/2022-07-08-%E6%9A%97%E7%BD%91%E9%83%BD%E6%9C%89%E4%BA%9B%E4%BB%80%E4%B9%88%EF%BC%9F/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">暗网都有些什么？</span>
+      <time style="float: right;">07-08</time>
+    </a>
+  
+</div>
 
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Spring项目结构分析</h1>
-            
-              <p class="note note-info">
-                
-                  本文最后更新于：1 小时前
-                
-              </p>
-            
-            <div class="markdown-body">
-              <img src="\images\spring\项目结构.png" srcset="/img/loading.gif" lazyload alt="项目结构" style="zoom:67%;" />
 
-<p><span class="label label-success"><font size="3">DemospringApplication：</font></span>Spring Boot的程序入口。整个应用从这里开始。</p>
-<p><span class="label label-success"><font size="3">static：</font></span>和templates是好搭档，用来存放静态资源，例如：图片、js、css。</p>
-<p><span class="label label-success"><font size="3">templates：</font></span>非常重要的一个东西，用来存放渲染内容到浏览器的文件。</p>
-<p><span class="label label-success"><font size="3">application.properties：</font></span>Spring Boot 的配置文件，可以配置访问的端口和数据库连接等。</p>
-<p><span class="label label-success"><font size="3">DemospringApplicationTests：</font></span>一个测试类。通过测试可确保程序能正确运行。</p>
-<p><span class="label label-success"><font size="3">pom.xml：</font></span>这是 maven 的配置文件，在该文件里面写着已经导入的依赖等。后续如果要导入其它依赖的话也可以在该文件配置。</p>
-<p><span class="label label-success"><font size="3">External Libraries：</font></span>顾名思义，这是除本项目以外的用 Java 开发的其它程序。如果别人已经开发了解决一种问题的算法，那么我们可以直接调用，而不用重复造轮子。在这里 maven 根据我们选择的依赖已经为我们导入了相关的库了。</p>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Spring%E5%85%A5%E9%97%A8%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Spring入门篇---学习笔记</a>
-                    
-                  </div>
-                
-                
+
+
               </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2021/07/19/2021-07-18-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">实现一个简单的例子</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2021/07/18/2021-07-18-%E5%88%9B%E5%BB%BASpring%E9%A1%B9%E7%9B%AE/">
-                        <span class="hidden-mobile">创建Spring项目</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
             </div>
-
-            
-              <!-- Comments -->
-              <article class="comments" id="comments" lazyload>
-                
-                  
-                
-                
-
-              </article>
-            
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
     
 
     
@@ -507,15 +374,9 @@ setInterval("createtime()",250);
 
 
 
-  <script  src="https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js" ></script>
 
 
 
-  <script  src="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js" ></script>
 
 
 
