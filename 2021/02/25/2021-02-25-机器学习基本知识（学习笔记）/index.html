@@ -20,11 +20,11 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="由于浏览器有缓存，所以请手动刷新网页以查看更新。感谢关注我的博客，你可以点击博客顶部的导航栏中的分类或标签，从而挑选自己感兴趣的话题。">
+  <meta name="description" content="博主是草塔中学学生，目前耕耘于计算机和人生领域——细分为图拉丁都喜欢的高性价比计算机组装、黑不进任何设备的黑客技术研究以及牛也听不懂的人生哲理探求。">
   <meta name="author" content="TCJ">
   <meta name="keywords" content="草塔中学学生、图拉丁都喜欢的高性价比计算机组装、黑不进任何设备的黑客技术研究、牛也听不懂的人生哲理探求">
   
-  <title>博客浏览导航 | 田超杰的个人网站-一个传播计算机知识和人生哲理的博客</title>
+  <title>机器学习基本知识（学习笔记） | 田超杰的个人网站-一个传播计算机知识和人生哲理的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -216,12 +216,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/images/%E7%81%AB%E6%98%9F%E8%BD%A6.jpg') no-repeat center center;
+         style="background: url('/images/machine_learning_basic/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="博客浏览导航">
+            <span class="h2" id="subtitle" title="机器学习基本知识（学习笔记）">
               
             </span>
 
@@ -236,8 +236,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-18 14:40" pubdate>
-        2021年7月18日 下午
+      <time datetime="2021-02-25 14:59" pubdate>
+        2021年2月25日 下午
       </time>
     </span>
   
@@ -248,7 +248,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      62 字
+      1.8k 字
     </span>
   
 
@@ -258,7 +258,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      18
        分钟
     </span>
   
@@ -296,23 +296,57 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">博客浏览导航</h1>
+            <h1 style="display: none">机器学习基本知识（学习笔记）</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：14 天前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              <p><span class="label label-success"><font size = "3">由于浏览器有缓存，所以请手动刷新网页以查看更新。</font></span></p>
-<p><span class="label label-success"><font size = "3">感谢关注我的博客，你可以点击博客顶部的导航栏中的分类或标签，从而挑选自己感兴趣的话题。</font></span></p>
+              <p>临近中午，我和奶奶两人走在田壤中央的小道上——通往菜地。温和的春风吹来，迎面拍打在我的身上。嗯，最近天气不错，地里的泥土湿不了我的鞋！来到菠菜地旁，弯下腰，捏住菜茎，再往上一提，菠菜就出来了。<img src="/images/machine_learning_basic/%E9%9A%90%E8%97%8F%E7%9A%84%E8%9F%BE%E8%9C%8D.png" srcset="/img/loading.gif" lazyload alt="隐藏的蟾蜍"></p>
+<p>大家发现上图有什么异样的东西了吗？没错，当我在辛勤的劳动时，我竟然碰到了一只正在冬眠的蟾蜍。</p>
+<p>进一步看，我们发现这里涉及很多基于经验做出的预判。例如：对于天气和湿鞋的判断、对一只蟾蜍的判断 <strong>······</strong> 可以看出，我们能够做出有效的预判，是因为我们已经积累了许多经验，而通过对经验的利用，就能对新情况做出有效的决策。既然博主是计算机爱好者，那当然想要计算机来帮助我们，这样就可以从繁重的脑力劳动中解脱出来了。本文的主题——机器学习就是致力于研究如何通过计算的手段，利用经验来改善系统自身的性能的一门学科。</p>
+<p>机器学习所研究的主要内容，是关于在计算机上从数据中产生“ 模型 ”（model）的算法，即“ 学习算法 ”（learning algorithm）。有了学习算法，我们把经验数据提供给它，它就能基于这些数据产生模型；在面对新的情况时，模型会给我们提供相应的判断。所以，我们也可以说机器学习是研究关于“学习算法”的学问。我们可以用“ 模型 ”泛指从数据中学得的结果。</p>
+<h5 id="旁注：【Mitchell-，1997】给出了一个更形式化的定义：假设用P来评估计算机程序在某任务类T上的性能，若一个程序通过经验-E-在-T-中任务上获得了性能改善，则我们就说关于-T-和P，该程序对-E进行了学习。（经验-E-、任务-T-和性能度量-P-的定义范围非常宽广，这些被用来构建机器学习算法。）"><a href="#旁注：【Mitchell-，1997】给出了一个更形式化的定义：假设用P来评估计算机程序在某任务类T上的性能，若一个程序通过经验-E-在-T-中任务上获得了性能改善，则我们就说关于-T-和P，该程序对-E进行了学习。（经验-E-、任务-T-和性能度量-P-的定义范围非常宽广，这些被用来构建机器学习算法。）" class="headerlink" title="旁注：【Mitchell ，1997】给出了一个更形式化的定义：假设用P来评估计算机程序在某任务类T上的性能，若一个程序通过经验 E 在 T 中任务上获得了性能改善，则我们就说关于 T 和P，该程序对 E进行了学习。（经验 E 、任务 T 和性能度量 P 的定义范围非常宽广，这些被用来构建机器学习算法。）"></a><u>旁注：</u>【Mitchell ，1997】给出了一个更形式化的定义：假设用P来评估计算机程序在某任务类T上的性能，若一个程序通过经验 E 在 T 中任务上获得了性能改善，则我们就说关于 T 和P，该程序对 E进行了学习。（经验 E 、任务 T 和性能度量 P 的定义范围非常宽广，这些被用来构建机器学习算法。）</h5><h4 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h4><p>数据集（data set）：一组记录的集合，其中每条记录是关于一个事件或对象的描述，称为一个“ 示例 ”（instance）或“ 样本 ”（sample）。事件或对象在某方面的表现或性质称为“ 属性 ”（attribute）或“ 特征 ”（feature）；属性上的值被称为“ 属性值 ”（attribute value）。选定属性张成的空间被称为“ 属性空间 ”（attribute space）、“ 样本空间 ”（sample space）或“ 输入空间 ”。由于空间中的每一个点对应一个坐标向量，因此我们也把一个示例称为一个“ 特征向量 ”（feature vector）</p>
+<h5 id="旁注：-有时整个数据集亦称一个样本。"><a href="#旁注：-有时整个数据集亦称一个样本。" class="headerlink" title="旁注： 有时整个数据集亦称一个样本。"></a><strong><u>旁注：</u></strong> 有时整个数据集亦称一个样本。</h5><p><strong><u>例：</u>有一个数据集 D = {(色泽 = 暗淡；表面 = 圆润)，(色泽 = 暗淡；表面 = 褶皱)}，这里有两个“ 示例 ”或“ 样本 ”。每个“ 样本 ”都有两个“ 属性 ”或“ 特征 ”，它们有对应的属性值。且每个“ 示例 ”都是二维空间上的一个点，点对应了一组向量，称为“ 特征向量 ”。</strong></p>
+<p>一般地，令 D = {x1，x2，···，xm}表示包含m个特征向量的数据集，每个向量的长度为d，即xi = (xi1；xi2；···；xid)是 d 维样本空间 X 中的一个向量， xi∈X，其中 xij 是向量 xi 在第 j 个特征上的取值（即属性值），d 称为样本 xi 的“ 维数 ”（dimensionality）。</p>
+<p>从数据中学得“ 模型 ”的过程称为“ 学习 ”（learning）或“ 训练 ”（training），该过程通过执行某个学习算法来完成。模型亦称“ 假设 ”（hypothesis），因为它对应了关于数据的某种潜在规律。潜在规律可称为“ 真相 ”或“ 真实 ”（ground–truth）,模型也可称为“ 学习器 ”（leaener），可看作学习算法在给定数据和参数空间上的实例化。</p>
+<h5 id="旁注：学习算法通常有参数需设置，使用不同的参数值和训练数据，将产生不同的结果。"><a href="#旁注：学习算法通常有参数需设置，使用不同的参数值和训练数据，将产生不同的结果。" class="headerlink" title="旁注：学习算法通常有参数需设置，使用不同的参数值和训练数据，将产生不同的结果。"></a><u><strong>旁注：</strong></u><strong>学习算法通常有参数需设置，使用不同的参数值和训练数据，将产生不同的结果。</strong></h5><p>学习或训练用的数据集称为“ 训练集 ”（training set）（区别“ 测试集 ”（test set）测试模型用的数据集），其中每个样本称为一个“ 训练样本 ”（training sample），它们总称“ 训练数据 ”（training data）。</p>
+<p>根据训练数据是否拥有标记信息，学习任务可大致划分为两大类：“ 监督学习 ”（supervised learning）和“ 无监督学习 ”（unsupervised learning）。这里的“监督”当然不是有人在一旁监督的意思啦！</p>
+<p>如果要建立关于“ 预测 ”（prediction）的模型，我们需获得训练样本的“ 结果 ”信息（即上文的<u>标记信息</u>）例如：((色泽 = 暗淡；表面 = 褶皱)，蟾蜍)，“ 蟾蜍 ”就称为“ 标记 ”（label）；有了标记的示例就称为“ 样例 ”（example）。一般情况下：（xi，yi）表示第 i 个样例，其中 yi ∈ Y 是示例 xi 的标记，Y 是所有标记的集合，所以也称“ 标记空间 ”（label space）或“ 输出空间 ”。</p>
+<p>像上面判断是否是蟾蜍的任务所预测的是离散值，此类学习任务称为“ 分类 ”（classification）；若预测的是连续值，例如判断蟾蜍的年龄，此类学习任务称为“ 回归 ”（regression）。它们都是“ 监督学习 ”。如果只有两个输出结果（是蟾蜍或不是蟾蜍），那这个任务称为“ 二分类任务 ”（binary classification），一般称其中一个类为“ 正类 ”（positive class），另一个类为“ 反类 ”（negative class）；如果要判断是蟾蜍还是泥土或是其它东西，那这个任务则称为“ 多分类任务 ”（multi-class classification）。正如上文所示，预测任务是希望通过对训练集{(x1,y1),(x2,y2),···,(xm,ym)}进行学习，建立一个从输入空间 X 到输出空间 Y 的映射 f：X→Y。对于二分类任务来说，通常令Y = {–1,+1}或{0,1}；对多分类任务，|Y| &gt;2；那回归任务就是：Y  = R，R为实数集。</p>
+<p>如果我们已经知道了是蟾蜍，并且做了“ 聚类 ”（clustering）,将训练集中的蟾蜍分成若干组，每组称为一个“ 簇 ”（clustering），这样的学习使用的训练样本通常不拥有标记信息（所以是无监督学习），但它有助于我们了解数据内在规律。因为簇可能对应一些潜在的概念划分，例如“大蟾蜍”、“浅色蟾蜍”等。</p>
+<p>学得的模型能成功的用在实际生活中才是机器学习的目标，模型适用于新样本的能力称为“ 泛化 ”能力</p>
+<p>（generalization）。通常假设样本空间中全体样本遵从一个未知“ 分布 ”（distribution）<em>D</em>，我们有的样本都是独立地从这个分布上采样获得的，即“ 独立同分布 ”（independent and identically </p>
+<p>distributed，简称 i.i.d.）。像卖油翁一样，孰能生巧；训练样本越多，越了解<em>D</em>，则模型的泛化能力越强。</p>
+<hr>
+<p>—【参考资料 ——《机器学习》、《深度学习》，仅供学习】</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+                    
+                  </div>
                 
               </div>
               
@@ -327,9 +361,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/07/18/2021-07-18-%E5%88%9B%E5%BB%BASpring%E9%A1%B9%E7%9B%AE/">
+                      <a href="/2021/02/25/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9C%9F%E4%B8%8D%E9%94%99%EF%BC%88%E8%B6%A3%E8%AF%84%EF%BC%89/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">创建Spring项目</span>
+                        <span class="hidden-mobile">大数据推荐趣评</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -337,8 +371,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/18/2021-07-17-Spring/">
-                        <span class="hidden-mobile">Spring</span>
+                      <a href="/2021/02/24/2021-02-24-%E6%98%BE%E5%8D%A1%E6%9A%B4%E6%B6%A8%EF%BC%8C%E8%BF%99%E6%98%AF%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F/">
+                        <span class="hidden-mobile">为什么显卡暴涨了？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
