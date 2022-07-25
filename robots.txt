@@ -1,2 +1,2 @@
 User-agent: *
-Disallow:
+Disallow: /2021/07/18/2021-07-18-%E5%8D%9A%E5%AE%A2%E6%B5%8F%E8%A7%88%E5%AF%BC%E8%88%AA/
