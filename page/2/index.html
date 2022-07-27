@@ -257,7 +257,7 @@
           
             
           
-          《百年孤独》是由哥伦比亚作家加西亚·马尔克斯所著的魔幻现实主义长篇小说。整篇小说充斥着魔幻的情节，比如：“他拖着两块金属锭走家串户，引发的景象使所有人目瞪口呆：铁锅、铁盆、铁钳、小铁炉纷纷跌落，木板因钉子绝望挣扎、螺丝奋力挣脱而吱嘎作响，甚至连那些丢失多日的物件也在久寻不见的地方出现，一窝蜂似的追随在梅尔基亚德斯的魔铁后面”。但是，这些魔幻情节的背后却是现实。这篇小说讲述了布恩迪亚家族从兴盛到衰亡
+          这篇小说讲述了布恩迪亚家族从兴盛到衰亡的全过程，而贯穿全文的情感线索便是“孤独”。从家族的第一代开始，这个家族的每个成员就都被笼罩在孤独之下。
         </a>
       </p>
 
@@ -317,7 +317,7 @@
           
             
           
-          记得博主上次发表博文好像还是在上次吧，转眼间博主的寒假就快来了。光阴似箭，日月如梭，时间在不经意间就流逝了。博主特写此博文以记录博主的成长，为的是在新的一年里能够更好的生活。—— 前言以个人的角度思考世界在过去的一年里，博主经历了大大小小的事情、领略了各种各样的人生味道—有酸的、有甜的、有苦的、有辣的。生而为人，不像自然界的独行动物，必须时刻生活在人类这个密切联系的社会中。人为什么会存在？我只能说
+          在过去的一年里，博主经历了大大小小的事情、领略了各种各样的人生味道---有酸的、有甜的、有苦的、有辣的。博主特写此博文以记录博主的成长，为的是在新的一年里能够更好的生活。
         </a>
       </p>
 
@@ -373,10 +373,7 @@
           
             
           
-          这次我们来学习Thymeleaf特有的注释模块。
-
-Standard HTML/SML comments&lt;!-- … --&gt; 注释可以用在 Thymeleaf 模板中的任何地方，但是不会被 Thymeleaf 处理，它会随着必要的代码一字不差的复制到网页的源代码页
-123456789...&lt;h1 th:text=&quot;#&#123;hone.welcome&#125;&qu
+          Thymeleaf中的注释有很多种，其中既有在文件被执行时会被Thymeleaf从源码页中移出的注释，也有可以在网页源码页中和标准HTML页面中都显示的注释。
         </a>
       </p>
 
@@ -432,10 +429,7 @@ Standard HTML/SML comments&lt;!-- … --&gt; 注释可以用在 Thymeleaf 模板
           
             
           
-          这次我们来学习属性优先级。
-
-What happens when you write more than one th:* attribute in the same tag?For example:
-123&lt;ul&gt;    &lt;li th:each=&quot;item : $&#123;items&#125;&quot; th:text=&quot;$&#123;item.des
+          Thymeleaf有诸多属性，因此官方分别赋予了这些属性不同的优先级，以此来规范程序的行为。对于程序猿来说，只需要知道它们的执行顺序就够了。
         </a>
       </p>
 
@@ -491,11 +485,7 @@ What happens when you write more than one th:* attribute in the same tag?For exa
           
             
           
-          这次我们来学习局部变量。
-
-像 text 、each 、href 、insert 、if 、th:text 、th:each 、th:href 、th:insert 、th:if 等属性中的 text 、each 等都是 属性≠变量。
-那 Thymeleaf 中的变量是什么？我们之前在学习迭代的时候就碰到过一个迭代变量—web 点此进入迭代学习
-1234&lt;p&gt;链接选项&lt;/p&gt
+          Thymeleaf中的局部变量可以通过简单的赋值语句创建（当然也可以通过其它方法创建），它的作用范围是当前标签和它的子标签。
         </a>
       </p>
 
@@ -551,15 +541,7 @@ What happens when you write more than one th:* attribute in the same tag?For exa
           
             
           
-          这次我们学习灵活的布局，或者说提高代码的复用性。
-
-无论你浏览什么网页，都会（基本上）看到它——没错，它就是导航栏。
-
-
-
-
-以上列举了 4 个网站的导航栏 ，在网站内部跳转时，它们基本上不变，或只是变更少数内容。
-要为网站的每个页面都添上导航栏，必定会造成重复的代码，一个好的模板怎么会容忍这种事情发生？！于是， Thymeleaf 马上就提供了 th:fragment 属性来避免这种事的发生，现
+          Thymeleaf中的模块化可以防止重复造轮子，并使代码更简洁。和其它编程语言一样，只需要给相应的代码加上轮子的标识就可以重复使用了。
         </a>
       </p>
 
@@ -615,9 +597,7 @@ What happens when you write more than one th:* attribute in the same tag?For exa
           
             
           
-          这次我们学习 Thymeleaf 中的条件式。
-
-1234567&lt;p&gt;链接选项&lt;/p&gt;&lt;ol&gt;	&lt;li th:each=&quot;web : $&#123;webs&#125;&quot;&gt;		&lt;p th:text=&quot;$&#123;webStat.even&#125;? &#x27;偶&#x27;&quot;&gt;&lt;/p&g
+          Thymeleaf中的条件式的含义是只有当条件成立时才会执行本标签及子标签的语句。值得注意的是，Thymeleaf用th:unless属性提供了th:if + not的效果。
         </a>
       </p>
 
@@ -673,17 +653,7 @@ What happens when you write more than one th:* attribute in the same tag?For exa
           
             
           
-          这次我们学习 Thymeleaf 中的迭代。
-
-还记得之前的链接组吗？
-
-
-4个超链接都指向外部网站，现在我们要用迭代的形式将它们呈现在我们的网页中，等等，有这样的网站吗？
-当然有，当我们百度一下的时候，浏览器会显示大量的超链接供我们选择
-
-
-如果我们的问题改动一个字，结果就又不一样了，倘若这些都是程序猿在代码中手工一个一个添加的，那岂不是要疯了？这时候用迭代的方式来展示数据就是一个很好的方式！
-
+          通过从某个数据集中一次次地取出值的过程就是Thymeleaf中的迭代。使用迭代变量就可以调用数据集中每个对象的属性和方法。
         </a>
       </p>
 
@@ -739,10 +709,7 @@ What happens when you write more than one th:* attribute in the same tag?For exa
           
             
           
-          这次我们学习给属性赋值或修改值。
-
-给任何属性赋值  th:attr现在有一个订阅服务用来推送网站更新消息，并且可通过 /localhost:8080/subscribe 链接跳转到订阅界面进行订阅。主要有一个表单来获取订阅的邮件。
-123456&lt;form action=&quot;subscribe.html&quot;&gt;	&lt;fieldset&gt;		&lt;input ty
+          Thymeleaf允许显示的给属性赋值，也允许从配置文件中读取数据给属性赋值，后一种方式更加灵活也更常用。
         </a>
       </p>
 
@@ -798,15 +765,7 @@ What happens when you write more than one th:* attribute in the same tag?For exa
           
             
           
-          这次我们学习 Thymeleaf 支持的数据类型。
-
-字符串型： &#39;one text&#39; , &#39;Another one!&#39; ,… 
-小数及整数：0 , 34 , 3.0 , 12.3 ,… 
-布尔值：true , false 
-空值：null  
-文字标记：one text , 34 ,…  
-字符串型就像这样：
-123&lt;p&gt;    Now you are
+          Thymeleaf支持的数据类型有字符串、小数及整数、布尔值、空值以及文字标记。需要注意的是，字符串型的数据必须用单引号引起。
         </a>
       </p>
 
