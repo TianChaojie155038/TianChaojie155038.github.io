@@ -191,6 +191,18 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/download/">
                 
                 下载
@@ -300,7 +312,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 小时前
+                  本文最后更新于：2 小时前
                 
               </p>
             
@@ -341,7 +353,7 @@
 <p> <strong>·</strong> ~{templatename}：表示复制整个模板。</p>
 <p> <strong>·</strong> ~{::selector} or ~{this::selector} ：表示在当前模板中用 selector 匹配目标片段。</p>
 <p>注意到 <strong>templatename</strong> 必须要能够被当前模板引擎使用的模板解析器正确解析 ，否则如果 selector 没有匹配到片段，会报异常，~{} 依然可以被省略。</p>
-<p>Both <strong>templatename</strong> and <strong>selector</strong> can be fully-featured expressions(even conditionals!)like:</p>
+<p>Both <strong>templatename</strong> and <strong>selector</strong> can be fully-featured expressions(even conditionals!):</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;menu :: ($&#123;page.home&#125;? #&#123;menu.home&#125;:#&#123;menu.common&#125;)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>在上面的例子中,主页面会加载一个特有的导航栏，前提是 menu 文件中有该目标片段。</p>
 <p>（没有主页面跳转链接的导航栏，本来就不需要φ(*￣0￣)）</p>
@@ -357,11 +369,11 @@
 <p>只有管理员访问网站时才会看到 <u>管理员后台</u> 的跳转链接。</p>
 <img src="/images/Thymeleaf/admin后台.png" srcset="/img/loading.gif" lazyload alt="admin后台" style="zoom:80%;" />
 
-<h4 id="为了进一步提高代码的复用性，Thymeleaf-提供了可参数化的片段签名，like"><a href="#为了进一步提高代码的复用性，Thymeleaf-提供了可参数化的片段签名，like" class="headerlink" title="为了进一步提高代码的复用性，Thymeleaf 提供了可参数化的片段签名，like"></a>为了进一步提高代码的复用性，Thymeleaf 提供了<u>可参数化</u>的片段签名，like</h4><p><strong>Java</strong> 的方法、<strong>C</strong> 和 <strong>Python</strong> 的函数等，那 Thymeleaf 的 “函数” 的语法是什么呢？</p>
+<h4 id="为了进一步提高代码的复用性，Thymeleaf-提供了可参数化的片段签名，例如"><a href="#为了进一步提高代码的复用性，Thymeleaf-提供了可参数化的片段签名，例如" class="headerlink" title="为了进一步提高代码的复用性，Thymeleaf 提供了可参数化的片段签名，例如"></a>为了进一步提高代码的复用性，Thymeleaf 提供了<u>可参数化</u>的片段签名，例如</h4><p><strong>Java</strong> 的方法、<strong>C</strong> 和 <strong>Python</strong> 的函数等，那 Thymeleaf 的 “函数” 的语法是什么呢？</p>
 <h5 id="构造语法"><a href="#构造语法" class="headerlink" title="构造语法"></a>构造语法</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--属性值(Var)--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:fragment</span>=<span class="hljs-string">&quot;frag(onevar,twovar)&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;onevar&#125; + &#x27;and&#x27; + $&#123;twovar&#125;&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>和编程语言中的构造语法基本一致。</p>
 <h5 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;templatename::frag($&#123;value1&#125;,$&#123;value2&#125;)&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:replace</span>=<span class="hljs-string">&quot;templatename::frag(onevar=$&#123;value1&#125;,twovar=$&#123;value2&#125;)&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p>第二个语法中变量赋值语句可以乱序，like</p>
+<p>第二个语法中变量赋值语句可以乱序，例如</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:replace</span>=<span class="hljs-string">&quot;::frag (twovar=$&#123;value2&#125;,onevar=$&#123;value1&#125;)&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <hr>
 <h5 id="即使在构造的时候没有声明参数，也可以在调用的时候加入"><a href="#即使在构造的时候没有声明参数，也可以在调用的时候加入" class="headerlink" title="即使在构造的时候没有声明参数，也可以在调用的时候加入"></a>即使在构造的时候没有声明参数，也可以在调用的时候加入</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--声明--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:fragment</span>=<span class="hljs-string">&quot;frag&quot;</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -384,7 +396,7 @@
 <p>&#39;_&#39; results in current part of the fragment not being executed at all( title = no-operation),so the result is:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>The shopping application<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <br>    <span class="hljs-comment">&lt;!-- Common styles and scripts --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;all&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/css/shoppingapp.css&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;shortcut icon&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/images/favicon.ico&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/sho/sh/scripts/codebase.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/css/bootstrap.min.css&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/sho/themes/smoothness/jquery-ui.css&quot;</span>&gt;</span><br>    <br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>...<br></code></pre></td></tr></table></figure>
 <hr>
-<p><strong>th:insert</strong> 的表达式也可以是conditionals like:</p>
+<p><strong>th:insert</strong> 的表达式也可以是conditionals:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;$&#123;user.isAdmin()&#125; ? ~&#123;common :: adminhead&#125; : ~&#123;&#125;&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>...<br></code></pre></td></tr></table></figure>
 <p>又或者:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html">...<br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;$&#123;user.isAdmin()&#125; ? ~&#123;common :: adminhead&#125; : _&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>...<br></code></pre></td></tr></table></figure>
@@ -393,7 +405,7 @@
 <p>在 <strong>templatename</strong> or <strong>selector</strong> 未被正确解析或匹配到目标片段时会抛出异常，<strong>th:assert</strong> 属性与此类似，它通过创建一个表达式列表，并且当列表中的值均为 <strong>true</strong> 或等效与 <strong>true</strong> 时才会执行代码，否则会抛出异常：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">th:fragment</span>=<span class="hljs-string">&quot;contentheader(title)&quot;</span> <span class="hljs-attr">th:assert</span>=<span class="hljs-string">&quot;$&#123;!#strings.isEmpty(title)&#125;&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>可以用它来检验参数。</p>
-<p>Additionally,we can check for existence of the template resources througn template resolvers – by means of their checkExistence flag — we can use the existence of the fragment itself as the condition in a default operation:</p>
+<p>除此之外，我们可以通过模板解析器来检查模板资源是否存在，即通过它们的 checkExistence 标志。我们也可以把片段是否存在作为一个默认的条件：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html">...<br><span class="hljs-comment">&lt;!-- The body of the &lt;div&gt; will be used if the &quot;common :: salutation&quot; fragment --&gt;</span> <br><span class="hljs-comment">&lt;!-- does not exist (or is empty). --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:insert</span>=<span class="hljs-string">&quot;~&#123;common :: salutation&#125; ?: _&quot;</span>&gt;</span><br>    Welcome [[$&#123;user.name&#125;]], click <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">th:href</span>=<span class="hljs-string">&quot;@&#123;/support&#125;&quot;</span>&gt;</span>here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> for help-desk support.<br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>...<br></code></pre></td></tr></table></figure>
 <p>简言之就是若该模板和目标片段都存在，该语法和 <strong>th:insert=&quot;~{templatename :: selector}&quot;</strong> 基本一样；如果不存在，返回 <strong>null</strong> ，它不会报异常。</p>
 <h4 id="模板继承"><a href="#模板继承" class="headerlink" title="模板继承"></a>模板继承</h4><p>把 <strong>th:fragment</strong> 属性移到 &lt;html&gt; 标签中完成构造，then 在另一个模板的 &lt;html&gt; 标签中加入 <strong>th:replace</strong> 属性完成调用，切不可用 <strong>th:insert</strong> 否则会造成双重 &lt;html&gt; 标签。</p>

@@ -191,6 +191,18 @@
           
           
             <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
               <a class="nav-link" href="/download/">
                 
                 下载
@@ -248,7 +260,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      233 字
+      238 字
     </span>
   
 
@@ -258,7 +270,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      3
        分钟
     </span>
   
@@ -300,16 +312,16 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 天前
+                  本文最后更新于：2 小时前
                 
               </p>
             
             <div class="markdown-body">
               <p class="note note-warning"><font size="3" color="pink">这次我们来学习属性优先级。</font></p>
 
-<p>What happens when you write more than one <strong>th:*</strong> attribute in the same tag?For example:</p>
+<p>当Thymeleaf在同一标签中遇到了至少两个属性时，需要按顺序执行它们：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;item : $&#123;items&#125;&quot;</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;item.description&#125;&quot;</span>&gt;</span>Item description here...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p>We would expect that <strong>th:each</strong> attribute to execute before the <strong>th:text</strong> so that we get the results we want.</p>
+<p><strong>th:each</strong> 属性需要在 <strong>th:text</strong> 属性之前执行，否则会出错。</p>
 <p>Thymeleaf 通过建立数字优先级机制来保证我们得到想要的结果：（数字越小优先级越高）</p>
 <table>
     <tr>
@@ -363,7 +375,7 @@
         <th>th:remove</th>
     </tr>
 </table>
-Even if the attribute position is inverted(althougn it would be slightly less readable):
+无论属性位置的先后：
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;item.description&#125;&quot;</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;item : $&#123;items&#125;&quot;</span>&gt;</span>Item description here...<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
