@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tcjblog.com/about/index.html</loc>
+    
+    <lastmod>2022-08-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tcjblog.com/websitestatement/index.html</loc>
     
     <lastmod>2022-08-04</lastmod>
@@ -66,15 +75,6 @@
   
   <url>
     <loc>https://tcjblog.com/2021/07/21/2021-07-19-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%881%EF%BC%89/</loc>
-    
-    <lastmod>2022-07-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tcjblog.com/about/index.html</loc>
     
     <lastmod>2022-07-27</lastmod>
     
@@ -516,13 +516,6 @@
   </url>
   
   <url>
-    <loc>https://tcjblog.com/categories/%E4%BF%A1%E6%81%AF%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tcjblog.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-08-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -530,7 +523,7 @@
   </url>
   
   <url>
-    <loc>https://tcjblog.com/categories/E-test%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>https://tcjblog.com/categories/%E4%BF%A1%E6%81%AF%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -538,6 +531,13 @@
   
   <url>
     <loc>https://tcjblog.com/categories/T-Ti%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2022-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tcjblog.com/categories/E-test%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2022-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
