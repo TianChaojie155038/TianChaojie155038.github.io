@@ -301,24 +301,24 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：16 分钟前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              <p>1.sum(list)：对列表（list）求和。</p>
-<p>2.函数内如果没有 return 语句，则会返回 None。</p>
-<p>3.函数的返回值如果是多个（彼此间用逗号隔开），返回结果为元组。</p>
-<p>4.math.pow()：返回实数。</p>
-<p>5.DataFrame中的groupby()：as_index属性默认为True，即更改主索引，此时的主索引不适用属性检索法和字典检索法。单纯的分组（未进行进一步计算）后，返回的是DataFrame对象在内存中的虚拟地址，此时的主索引适用属性检索法和字典检索法，调用后返回的是虚拟地址。</p>
-<p>6.DataFrame中的sum()：axis=0时，表示列相加（数字相加、字符串相接）；axis=1时，表示行相加（同上）。默认axis=0。sum()与groupby()搭配使用时，不支持axis属性。不改变原对象。</p>
-<p>7.DataFrame中的mean()：返回的对象中的数字为实型，且所有数值小数位数保持一致（不足补0）。axis=0时，表示对列求平均；axis=1时，表示对行求平均。默认axis=0。所有计算仅限于数字之间。mean()与groupby()搭配使用时，不支持axis属性。不改变原对象。</p>
-<p>8.DataFrame中的max()：返回各属性下的最大值（数字比大小，字符串比编码值）。max()与groupby()搭配使用时，不会对作为分组依据的属性产生效果。不改变原对象。</p>
-<p>9.DataFrame中的min()：同max()。</p>
-<p>10.DataFrame中的sort_values()：’DataFrameGroupBy’对象没有这个属性，即分组后的对象不能使用这个属性。使用此函数时需要指明属性。ascending=False时，表示降序排序；ascending=True时，表示升序排序。默认ascending=True。axis=0时，表示列排序；axis=1时，表示行排序。默认axis=0。inplace=True时，改变原对象，并返回None；inplace=False时，不改变原对象，并返回一个新对象。默认inplace=False。</p>
-<p>11.DataFrame中的drop()：axis=1时，表示删除列，此时需要指定属性；axis=0时，表示删除行，此时需要指定索引。默认axis=0。inplace=True时，改变原对象，并返回None；inplace=False时，不改变原对象，并返回一个新对象。默认inplace=False。</p>
-<p>12.DataFrame中的insert(loc,column,value)：改变原对象，并返回None。                                            loc是一个整数，它是我们要插入新列的列的位置。这将使该位置上的现有列向右移动。<br>column是一个字符串，它是要插入的列的名称。<br>value只是要插入的值。它可以是int，string，float或任何东西，甚至可以是series /值列表。仅提供一个值将为所有行设置相同的值。</p>
-<p>13.DataFrame中的count()：axis=0时，表示统计列；axis=1时，表示统计行。默认axis=0。不改变原对象，并返回一个新对象。</p>
+              <p><strong>1.sum(list)：</strong>对列表（list）求和。</p>
+<p>**2.**函数内如果没有 return 语句，则会返回 None。</p>
+<p>**3.**函数的返回值如果是多个（彼此间用逗号隔开），返回结果为元组。</p>
+<p><strong>4.math.pow()：</strong>返回实数。</p>
+<p><strong>5.DataFrame中的groupby()：</strong>as_index属性默认为True，即更改主索引，此时的主索引不适用属性检索法和字典检索法。单纯的分组（未进行进一步计算）后，返回的是DataFrame对象在内存中的虚拟地址，此时的主索引适用属性检索法和字典检索法，调用后返回的是虚拟地址。</p>
+<p><strong>6.DataFrame中的sum()：</strong>axis=0时，表示列相加（数字相加、字符串相接）；axis=1时，表示行相加（同上）。默认axis=0。sum()与groupby()搭配使用时，不支持axis属性。不改变原对象。</p>
+<p><strong>7.DataFrame中的mean()：</strong>返回的对象中的数字为实型，且所有数值小数位数保持一致（不足补0）。axis=0时，表示对列求平均；axis=1时，表示对行求平均。默认axis=0。所有计算仅限于数字之间。mean()与groupby()搭配使用时，不支持axis属性。不改变原对象。</p>
+<p><strong>8.DataFrame中的max()：</strong>返回各属性下的最大值（数字比大小，字符串比编码值）。max()与groupby()搭配使用时，不会对作为分组依据的属性产生效果。不改变原对象。</p>
+<p><strong>9.DataFrame中的min()：</strong>同max()。</p>
+<p><strong>10.DataFrame中的sort_values()：</strong>‘DataFrameGroupBy’对象没有这个属性，即分组后的对象不能使用这个属性。使用此函数时需要指明属性。ascending=False时，表示降序排序；ascending=True时，表示升序排序。默认ascending=True。axis=0时，表示列排序；axis=1时，表示行排序。默认axis=0。inplace=True时，改变原对象，并返回None；inplace=False时，不改变原对象，并返回一个新对象。默认inplace=False。</p>
+<p><strong>11.DataFrame中的drop()：</strong>axis=1时，表示删除列，此时需要指定属性；axis=0时，表示删除行，此时需要指定索引。默认axis=0。inplace=True时，改变原对象，并返回None；inplace=False时，不改变原对象，并返回一个新对象。默认inplace=False。</p>
+<p><strong>12.DataFrame中的insert(loc,column,value)：</strong>改变原对象，并返回None。                                            loc是一个整数，它是我们要插入新列的列的位置。这将使该位置上的现有列向右移动。<br>column是一个字符串，它是要插入的列的名称。<br>value只是要插入的值。它可以是int，string，float或任何东西，甚至可以是series /值列表。仅提供一个值将为所有行设置相同的值。</p>
+<p><strong>13.DataFrame中的count()：</strong>axis=0时，表示统计列；axis=1时，表示统计行。默认axis=0。不改变原对象，并返回一个新对象。</p>
 
             </div>
             <hr>
