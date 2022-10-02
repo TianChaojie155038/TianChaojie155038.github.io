@@ -301,7 +301,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 个月前
+                  本文最后更新于：8 分钟前
                 
               </p>
             
@@ -362,7 +362,7 @@
 <p><img src="/images/%E4%BF%A1%E6%81%AF%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AD%9B%E9%80%89%E5%89%8D%E5%8D%81%E4%B8%AA%E7%BB%93%E6%9E%9C.png" srcset="/img/loading.gif" lazyload alt="筛选前十个结果"></p>
 <p><font size="3" color="red">注意：</font>①最大或者最小的1项或者多项。②若设置为百分比，当实际项数大于1时向下取整，当小于1时取1即可。</p>
 <h5 id="六、数据图表呈现"><a href="#六、数据图表呈现" class="headerlink" title="六、数据图表呈现"></a>六、数据图表呈现</h5><p>使用 Excel 软件创建图表呈现数据的一般步骤：分析表格数据→选择数据区域→插入图表→检查图表，描述数据特征。</p>
-<p>常用的图表类型：柱形图、折现图、饼图、雷达图、散点图、气泡图等。</p>
+<p>常用的图表类型：柱形图、折线图、饼图、雷达图、散点图、气泡图、条形图等。</p>
 <p><font size="3" color="blue">解析：</font>数据源判断时，先看图例，再看横坐标的系列名。</p>
 <p><font size="3" color="red">注意：</font>如果图表引用的数据区域发生变化（如数据修改、排序、筛选等操作），图表将会发生变化。但是设置小数位数不会影响图表和真实值。</p>
 <h5 id="七、行绝对引用和列绝对引用"><a href="#七、行绝对引用和列绝对引用" class="headerlink" title="七、行绝对引用和列绝对引用"></a>七、行绝对引用和列绝对引用</h5><p>如果不想让某个行号在自动填充时发生改变，则需要在行号前加绝对引用符号“$”，列同。</p>
@@ -552,7 +552,7 @@
 </tr>
 </tbody></table>
 <p>实践</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd  <span class="hljs-comment"># 以pd为pandas的别名，方便引用</span><br><br>d = pd.read_excel(<span class="hljs-string">&#x27;博文数据.xlsx&#x27;</span>)  <span class="hljs-comment"># 读取外部excel数据,excel文件与程序在同一目录下才能直接用文件名访问</span><br>print(d.count(axis=<span class="hljs-number">0</span>))  <span class="hljs-comment"># axis=0，每行计数；axis=1，每列计数</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd  <span class="hljs-comment"># 以pd为pandas的别名，方便引用</span><br><br>d = pd.read_excel(<span class="hljs-string">&#x27;博文数据.xlsx&#x27;</span>)  <span class="hljs-comment"># 读取外部excel数据,excel文件与程序在同一目录下才能直接用文件名访问</span><br>print(d.count(axis=<span class="hljs-number">0</span>))  <span class="hljs-comment"># axis=0，每列计数；axis=1，每行计数</span><br></code></pre></td></tr></table></figure>
 <p>控制台输出结果</p>
 <p><img src="/images/%E4%BF%A1%E6%81%AF%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BE%93%E5%87%BA5.png" srcset="/img/loading.gif" lazyload alt="输出5"></p>
 <p>由此可以知道未指定类别的博文数量。</p>
