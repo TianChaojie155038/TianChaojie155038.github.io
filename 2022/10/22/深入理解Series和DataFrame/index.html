@@ -301,7 +301,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 分钟前
+                  本文最后更新于：1 分钟前
                 
               </p>
             
@@ -404,6 +404,8 @@
 <h4 id="⑧append-方法"><a href="#⑧append-方法" class="headerlink" title="⑧append()方法"></a>⑧append()方法</h4><p>示例如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">&gt;&gt;&gt; </span>df = pd.DataFrame([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]], columns=<span class="hljs-built_in">list</span>(<span class="hljs-string">&#x27;AB&#x27;</span>), index=[<span class="hljs-string">&#x27;x&#x27;</span>, <span class="hljs-string">&#x27;y&#x27;</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>df<br>   A  B<br>x  <span class="hljs-number">1</span>  <span class="hljs-number">2</span><br>y  <span class="hljs-number">3</span>  <span class="hljs-number">4</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>df2 = pd.DataFrame([[<span class="hljs-number">5</span>, <span class="hljs-number">6</span>], [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>]], columns=<span class="hljs-built_in">list</span>(<span class="hljs-string">&#x27;AB&#x27;</span>), index=[<span class="hljs-string">&#x27;x&#x27;</span>, <span class="hljs-string">&#x27;y&#x27;</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>df.append(df2)<br>   A  B<br>x  <span class="hljs-number">1</span>  <span class="hljs-number">2</span><br>y  <span class="hljs-number">3</span>  <span class="hljs-number">4</span><br>x  <span class="hljs-number">5</span>  <span class="hljs-number">6</span><br>y  <span class="hljs-number">7</span>  <span class="hljs-number">8</span><br>With ignore_index <span class="hljs-built_in">set</span> to <span class="hljs-literal">True</span>:<br><span class="hljs-meta">&gt;&gt;&gt; </span>df.append(df2, ignore_index=<span class="hljs-literal">True</span>)<br>   A  B<br><span class="hljs-number">0</span>  <span class="hljs-number">1</span>  <span class="hljs-number">2</span><br><span class="hljs-number">1</span>  <span class="hljs-number">3</span>  <span class="hljs-number">4</span><br><span class="hljs-number">2</span>  <span class="hljs-number">5</span>  <span class="hljs-number">6</span><br><span class="hljs-number">3</span>  <span class="hljs-number">7</span>  <span class="hljs-number">8</span><br></code></pre></td></tr></table></figure>
 <h4 id="⑨values属性"><a href="#⑨values属性" class="headerlink" title="⑨values属性"></a>⑨values属性</h4><p>返回存储值的二维数据（类二维列表，行与行间用空格隔开，输出时呈现二维形式）。</p>
+<hr>
+<p><strong>tcjblog.com版权所有</strong></p>
 
             </div>
             <hr>
