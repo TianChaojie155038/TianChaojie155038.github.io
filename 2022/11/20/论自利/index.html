@@ -14,11 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="Thymeleaf中的局部变量可以通过简单的赋值语句创建（当然也可以通过其它方法创建），它的作用范围是当前标签和它的子标签。">
+  <meta name="description" content="博文伊始，先来看一个简单的推论：人不会做对自己不利的事（前提）→ 人做的事都是对自己有利的（结论）→ 人的一切所作所为都是出于为自己考虑（揭示本质）。">
   <meta name="author" content="TCJ">
   <meta name="keywords" content="草塔中学学生、图拉丁都喜欢的高性价比计算机组装、黑不进任何设备的黑客技术研究、牛也听不懂的人生哲理探求">
   
-  <title>Thymeleaf特点（7）- 局部变量 | 田超杰的个人网站-一个传播计算机知识和人生哲理的博客</title>
+  <title>论自利 | 田超杰的个人网站-一个传播计算机知识和人生哲理的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,12 +217,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/images/Thymeleaf/Thymeleaf.png') no-repeat center center;
+         style="background: url('/images/%E8%87%AA%E5%88%A9/%E8%83%8C%E6%99%AF.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Thymeleaf特点（7）- 局部变量">
+            <span class="h2" id="subtitle" title="论自利">
               
             </span>
 
@@ -237,8 +237,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-27 17:10" pubdate>
-        2021年7月27日 下午
+      <time datetime="2022-11-20 08:33" pubdate>
+        2022年11月20日 早上
       </time>
     </span>
   
@@ -249,7 +249,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      329 字
+      649 字
     </span>
   
 
@@ -259,7 +259,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      6
        分钟
     </span>
   
@@ -297,49 +297,32 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Thymeleaf特点（7）- 局部变量</h1>
+            <h1 style="display: none">论自利</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：4 个月前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              <p class="note note-success"><font size="3" color="purple">这次我们来学习局部变量。</font></p>
-
-<p>像 text 、each 、href 、insert 、if 、th:text 、th:each 、th:href 、th:insert 、th:if 等属性中的 text 、each 等都是 属性≠变量。</p>
-<p>那 Thymeleaf 中的变量是什么？我们之前在学习迭代的时候就碰到过一个迭代变量—web <a href="https://tcjblog.com/2021/07/23/2021-07-22-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%884%EF%BC%89/" target="_blank"><font color="red">点此进入迭代学习</font></a></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>链接选项<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">th:each</span>=<span class="hljs-string">&quot;web : $&#123;webs&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">th:href</span>=<span class="hljs-string">&quot;$&#123;web.url&#125;&quot;</span> <span class="hljs-attr">th:text</span>=<span class="hljs-string">&quot;$&#123;web.name&#125;&quot;</span>&gt;</span>默认<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>	<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p>那一般的声明局部变量的语句是什么？</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:with</span>=<span class="hljs-string">&quot;isEven=($&#123;prodStat.count&#125; % 2 == 0)&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>th:with</strong> 属性在学习算术运算的时候就出现过。 <a href="https://tcjblog.com/2021/07/21/2021-07-21-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%882%EF%BC%89/#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97-%E5%92%8C
-" target="_blank"><font color="red">点此进入数据类型学习</font></a></p>
-<p>当 <strong>th:with</strong> 执行的时候，<strong>isEven</strong> 变量会被创建并被加入到上下文中的变量集合里以便管理，但是它的作用范围仅是当前标签和它的子标签。</p>
-<p>你也可以用多赋值语句同时给多个变量赋值：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:with</span>=<span class="hljs-string">&quot;isEven=($&#123;prodStat.count&#125; % 2 == 0),isOdd=($&#123;prodStat.count&#125; % 2 != 0)&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>th:with</strong> 属性允许在同一属性中使用已经定义的变量：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">th:with</span>=<span class="hljs-string">&quot;isEven=($&#123;prodStat.count&#125; % 2 == 0),isOdd= not isEven&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+              <p>博文伊始，先来看一个简单的推论：人不会做对自己不利的事（前提）<strong>→</strong> 人做的事都是对自己有利的（结论）<strong>→</strong> 人的一切所作所为都是出于为自己考虑（揭示本质）。</p>
+<p>看到这里，有些同学就会提出疑问了：既然人做的都是对自己有利的事，那为什么还有那么多人进监狱呢，难道监狱是个好地方吗？</p>
+<p>要解答上面这个疑惑，我们需要分别从主观和客观的角度来看待问题。</p>
+<p>主观上，人的行为都是为了满足自己的需要，从一个人出生时就是这样，这一点毋庸置疑。</p>
+<p>但是在客观上，人的这种行为所产生的效果可能会适得其反。</p>
+<p>看到这里，又有些同学会提出疑问：难道别人向红十字会捐钱也是为了自己吗？</p>
+<p>没错，别人捐款，只是因为别人要从中得到他需要的东西。他或许是觉得这样做很神圣，想从中得到自豪感；又或者是因为他无法拒绝。</p>
+<p>由此，我们又可以得出一个结论，那就是：虽然人做的事都是为了自己，但这也有可能对他人有利。</p>
+<p>子曰：“君子喻于义，小人喻于利。”上面的推论或许会让你觉得人都是自私的，所谓的君子只是比小人看到了更长远的利益。因为人们崇尚“义”，所以君子会更受人们待见，而小人则会遭到人们鄙弃，由是观之，谁的做法更有利于自身的发展就显而易见了。从这个角度分析，君子反倒是更聪明的逐利者。</p>
+<p>人类社会中的物质是匮乏的，每个人都希望得到尽可能多的物资来满足自身的欲望。你没法要求别人无偿把物资让给你，更无权要求别人首先为你的需要考虑。原因很简单，一个连自己都不爱的人是不可能去爱其他人的。</p>
+<p>“自利”是人类社会能够长久稳定运行的一个基本原理之一。从古到今，“自私”都是被人们憎恶的，因为人们想通过道德上的约束作用来淡化人的自利本性。事实证明，适当的为他人考虑确实能够促进社会的发展，但是这并不是在否定“自利”，这恰恰是对“自利”的巧妙运用。</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/Thymeleaf%E8%BF%9B%E9%98%B6%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Thymeleaf进阶篇---学习笔记</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/Thymeleaf/">Thymeleaf</a>
-                    
-                  </div>
                 
               </div>
               
@@ -354,18 +337,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/07/27/2021-07-27-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%888%EF%BC%89/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Thymeleaf特点（8）- 属性优先级</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/27/2021-07-24-Thymeleaf%E7%89%B9%E7%82%B9%EF%BC%886%EF%BC%89/">
-                        <span class="hidden-mobile">Thymeleaf特点（6）- 模块化</span>
+                      <a href="/2022/11/05/%E8%92%B2%E5%85%AC%E8%8B%B1%E9%A3%9E%E8%B5%B0%E4%BA%86/">
+                        <span class="hidden-mobile">蒲公英飞走了</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
