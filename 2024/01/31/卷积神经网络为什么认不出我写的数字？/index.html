@@ -254,7 +254,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      2.2k 字
     </span>
   
 
@@ -463,7 +463,7 @@
 <h4 id="预测生活中的数字"><a href="#预测生活中的数字" class="headerlink" title="预测生活中的数字"></a>预测生活中的数字</h4><p>我们读取已经训练好的模型，并在数据集上进行预测。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">model = keras.models.load_model(<span class="hljs-string">&#x27;model3&#x27;</span>)<br>model.evaluate(my_data)<br></code></pre></td></tr></table></figure>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Found</span> <span class="hljs-number">50</span> files belonging to <span class="hljs-number">10</span> classes.<br><span class="hljs-attribute">1</span>/<span class="hljs-number">1</span><span class="hljs-meta"> [==============================] - 2s 2s/step - loss: 0.6355 - accuracy: 0.8800</span><br></code></pre></td></tr></table></figure>
-<p>精度和损失值都有明显的提升，这并不是偶然事件。事实上，我已经在相同的架构上训练了好几次了。最后的结果都表明改进后的模型具有较好的泛化能力。</p>
+<p>精度和损失值都有明显的提升，这并不是偶然事件。事实上，我已经在相同的架构上训练了好几次了（改进前和改进后）。最后的结果都表明改进后的模型具有较好的泛化能力。</p>
 
             </div>
             <hr>

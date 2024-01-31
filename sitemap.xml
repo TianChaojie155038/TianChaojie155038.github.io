@@ -798,13 +798,6 @@
 
   
   <url>
-    <loc>https://tcjblog.com/categories/%E4%BF%A1%E6%81%AF%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://tcjblog.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6/</loc>
     <lastmod>2024-01-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -812,7 +805,21 @@
   </url>
   
   <url>
+    <loc>https://tcjblog.com/categories/%E4%BF%A1%E6%81%AF%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://tcjblog.com/categories/T-Ti%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2024-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tcjblog.com/categories/E-test%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2024-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -827,13 +834,6 @@
   
   <url>
     <loc>https://tcjblog.com/categories/Spring%E5%85%A5%E9%97%A8%E7%AF%87-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tcjblog.com/categories/E-test%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2024-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
