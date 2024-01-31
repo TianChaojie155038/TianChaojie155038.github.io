@@ -20,15 +20,6 @@
   </url>
   
   <url>
-    <loc>https://tcjblog.com/2023/10/19/python%E7%9A%84%E7%AE%80%E5%8D%95%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/</loc>
-    
-    <lastmod>2023-10-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tcjblog.com/2023/09/19/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%8F%AD%E4%BC%9A%EF%BC%88%E7%8F%AD%E5%A7%94%E7%AB%9E%E9%80%89%EF%BC%89/</loc>
     
     <lastmod>2023-09-19</lastmod>
@@ -877,14 +868,14 @@
   </url>
   
   <url>
-    <loc>https://tcjblog.com/categories/%E4%BA%BA%E7%94%9F/</loc>
+    <loc>https://tcjblog.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2024-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://tcjblog.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://tcjblog.com/categories/%E4%BA%BA%E7%94%9F/</loc>
     <lastmod>2024-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
